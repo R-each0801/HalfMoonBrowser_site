@@ -1,4 +1,5 @@
 ---
+layout: default
 title: ブックマーク追加とページ内ジャンプ
 prev:
   title: サブメニューを開く

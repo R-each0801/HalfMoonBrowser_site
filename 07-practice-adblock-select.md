@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 広告を手動で消す
 prev:
   title: ブックマーク追加とページ内ジャンプ

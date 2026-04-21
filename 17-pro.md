@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Pro 版
 prev:
   title: iOS との連携

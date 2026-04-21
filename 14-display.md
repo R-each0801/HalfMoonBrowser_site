@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 表示 (ダークモード)
 prev:
   title: 広告ブロックの詳細設定

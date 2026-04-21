@@ -1,4 +1,5 @@
 ---
+layout: default
 title: データ管理
 prev:
   title: 表示 (ダークモード)

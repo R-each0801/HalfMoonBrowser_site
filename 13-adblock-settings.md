@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 広告ブロックの詳細設定
 prev:
   title: プライベートブラウザ

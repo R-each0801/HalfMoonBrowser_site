@@ -1,4 +1,5 @@
 ---
+layout: default
 title: ダイヤルを編集する
 prev:
   title: ページ内検索

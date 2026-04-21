@@ -1,4 +1,5 @@
 ---
+layout: default
 title: ページ内検索
 prev:
   title: 自動スクロール

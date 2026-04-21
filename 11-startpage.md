@@ -1,4 +1,5 @@
 ---
+layout: default
 title: スタートページ
 prev:
   title: ダイヤルを編集する

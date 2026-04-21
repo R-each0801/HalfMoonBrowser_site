@@ -2,6 +2,12 @@ title: HalfMoon Browser
 description: iPhone 向けの片手操作ブラウザ — ダイヤル操作・広告ブロック・プライベートモードを搭載
 lang: ja
 
+# ⚠️ GitHub Pages で project site として公開するため baseurl 必須。
+# https://r-each0801.github.io/HalfMoonBrowser_site/ で配信される。
+# baseurl を空にすると CSS/画像のパスが全て 404 になる。
+url: "https://r-each0801.github.io"
+baseurl: "/HalfMoonBrowser_site"
+
 # GitHub Pages 設定
 markdown: kramdown
 kramdown:
@@ -16,8 +22,8 @@ defaults:
     values:
       layout: default
 
-# URL をシンプルに (001-setup.md → /001-setup)
-permalink: /:basename
+# pretty URL (01-setup.md → /01-setup/) — index.md は自動的に / に配置される
+permalink: pretty
 
 # 除外 (GitHub Pages のビルド対象から外す)
 exclude:

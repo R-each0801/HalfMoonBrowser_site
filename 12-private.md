@@ -1,4 +1,5 @@
 ---
+layout: default
 title: プライベートブラウザ
 prev:
   title: スタートページ

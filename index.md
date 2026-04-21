@@ -1,4 +1,5 @@
 ---
+layout: default
 title: マニュアル
 next:
   title: インストールと初回起動

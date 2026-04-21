@@ -1,4 +1,5 @@
 ---
+layout: default
 title: URL・検索バーを呼び出す
 prev:
   title: ダイヤルの基本

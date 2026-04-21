@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 自動スクロール
 prev:
   title: 広告を手動で消す

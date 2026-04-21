@@ -1,4 +1,5 @@
 ---
+layout: default
 title: サブメニューを開く
 prev:
   title: 戻る・進む・ホーム・タブ開閉

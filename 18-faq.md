@@ -1,4 +1,5 @@
 ---
+layout: default
 title: よくある質問
 prev:
   title: Pro 版

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: ダイヤルの基本
 prev:
   title: インストールと初回起動

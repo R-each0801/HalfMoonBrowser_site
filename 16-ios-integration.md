@@ -1,4 +1,5 @@
 ---
+layout: default
 title: iOS との連携
 prev:
   title: データ管理

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: インストールと初回起動
 prev:
   title: HalfMoon Browser マニュアル

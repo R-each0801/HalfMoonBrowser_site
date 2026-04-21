@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 戻る・進む・ホーム・タブ開閉
 prev:
   title: URL・検索バーを呼び出す
