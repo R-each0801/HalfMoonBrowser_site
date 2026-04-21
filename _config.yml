@@ -8,6 +8,12 @@ lang: ja
 url: "https://r-each0801.github.io"
 baseurl: "/HalfMoonBrowser_site"
 
+# デフォルトテーマを使わず、自前の _layouts + _includes + assets で構築する。
+# 指定しないと GitHub Pages は minimal theme を自動適用し、
+# その assets/css/style.css が自前の同名ファイルを上書きしてしまう。
+theme: null
+plugins: []
+
 # GitHub Pages 設定
 markdown: kramdown
 kramdown:
