@@ -458,6 +458,67 @@ body {
 }
 
 /* ============================================
+ * カバーページ (スクリーンショット撮影用)
+ * /cover/ で配信。ヘッダー・サイドバー・フッターなしの最小構成で、
+ * 中央にブランドグリフ + タイトル + リードだけを表示する。
+ * ============================================ */
+body.hm-body-cover {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh; /* iOS でツールバーを除いた高さ */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--hm-bg);
+  background-image: radial-gradient(circle at 50% 40%,
+                    var(--hm-accent-soft) 0%,
+                    var(--hm-bg) 60%);
+}
+
+.hm-cover-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.hm-cover {
+  text-align: center;
+  max-width: 560px;
+  width: 100%;
+}
+
+.hm-cover-glyph {
+  width: 96px;
+  height: 96px;
+  color: var(--hm-accent);
+  margin: 0 auto 28px;
+  display: block;
+}
+
+.hm-cover-title {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  color: var(--hm-text);
+  line-height: 1.2;
+}
+
+.hm-cover-lead {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--hm-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .hm-cover-glyph { width: 80px; height: 80px; margin-bottom: 24px; }
+  .hm-cover-title { font-size: 32px; }
+  .hm-cover-lead { font-size: 16px; }
+}
+
+/* ============================================
  * ランディング (index) 専用スタイル
  * ============================================ */
 .hm-hero {
