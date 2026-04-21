@@ -1,0 +1,20 @@
+# GitHub Pages (Jekyll) 設定
+title: HalfMoon Browser マニュアル
+description: iPhone 向け片手操作ブラウザ「HalfMoon」の使い方ガイド
+lang: ja
+
+# 目次 (README.md) をランディングにする
+# (index.md を置かず README.md を自動的に / で配信させる設定)
+theme: jekyll-theme-minimal
+
+# マークダウン
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# 除外 (ビルド成果物のみ)
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .jekyll-cache

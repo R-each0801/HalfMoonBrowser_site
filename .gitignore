@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Jekyll (GitHub Pages を使う場合)
+_site/
+.jekyll-cache/
+.sass-cache/
+Gemfile.lock
