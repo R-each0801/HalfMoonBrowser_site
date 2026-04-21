@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>朝を気持ちよく始める 5 つのコツ - 朝活ライフ</title>
+<style>
+/* ============================================
+ * HalfMoon Browser — 広告ブロックデモページ
+ * 汎用的な日本語ブログ記事の見た目で、広告を意図的に多数配置。
+ *
+ * URL で状態切替:
+ *   /demo/                 → 全広告表示 (ブロックなし)
+ *   /demo/?block=standard  → 通常ブロック (5 個残る)
+ *   /demo/?block=strong    → 強力ブロック (0 個)
+ * ============================================ */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+               "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  background: #fafafa;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.75;
+  padding-bottom: 80px;
+}
+
+/* ==========  サイトヘッダー (偽) ========== */
+.site-header {
+  background: linear-gradient(135deg, #f9a825, #e65100);
+  color: white;
+  padding: 10px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+.site-brand {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+.site-nav {
+  font-size: 12px;
+  opacity: 0.92;
+  margin-top: 2px;
+}
+
+/* ==========  記事本体 ========== */
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.article h1 {
+  font-size: 22px;
+  line-height: 1.45;
+  margin: 16px 0 8px;
+  color: #1a1a1a;
+}
+.byline {
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+.article h2 {
+  font-size: 17px;
+  margin: 32px 0 10px;
+  padding: 4px 0 4px 10px;
+  border-left: 4px solid #e65100;
+  color: #1a1a1a;
+}
+.article p {
+  margin: 0 0 16px;
+  color: #333;
+}
+
+/* ==========  広告コンテナ 共通 ========== */
+.demo-ad-label {
+  display: inline-block;
+  font-size: 10px;
+  background: #ffe082;
+  color: #8b4513;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+
+/* 1. 上部バナー (URL フィルタで落とせる典型) */
+.demo-ad-top {
+  background: linear-gradient(90deg, #ffe082, #ffb74d);
+  padding: 16px;
+  text-align: center;
+  font-weight: 700;
+  color: #5d4037;
+  font-size: 14px;
+  border-bottom: 2px solid #e67e22;
+}
+
+/* 2. 緊急セール風スティッキーバナー */
+.demo-ad-sticky {
+  background: #ff5252;
+  color: white;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  animation: flash 1.5s infinite alternate;
+}
+@keyframes flash {
+  from { background: #ff5252; }
+  to { background: #ff1744; }
+}
+.demo-ad-sticky .demo-ad-label {
+  background: white;
+  color: #d32f2f;
+}
+
+/* 3. 記事前 大型広告 */
+.demo-ad-pre-article {
+  background: #fff3e0;
+  border: 2px dashed #ffb74d;
+  padding: 24px 16px;
+  text-align: center;
+  margin: 20px 0;
+  color: #e65100;
+  border-radius: 4px;
+}
+.demo-ad-pre-article strong {
+  display: block;
+  font-size: 18px;
+  margin: 10px 0 8px;
+}
+.demo-ad-pre-article .cta {
+  display: inline-block;
+  margin-top: 10px;
+  background: #e65100;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* 4/6/8. 本文中インライン広告 */
+.demo-ad-inline {
+  background: #fce4ec;
+  border: 1px solid #f8bbd0;
+  padding: 16px;
+  text-align: center;
+  margin: 18px 0;
+  font-size: 14px;
+  color: #ad1457;
+  border-radius: 4px;
+}
+.demo-ad-inline .demo-ad-label {
+  background: #f48fb1;
+  color: white;
+}
+.demo-ad-inline strong {
+  display: block;
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+/* 5. 動画広告 */
+.demo-ad-video {
+  background: #212121;
+  padding: 14px;
+  margin: 20px 0;
+  border-radius: 6px;
+  text-align: center;
+}
+.demo-ad-video .demo-ad-label {
+  background: #f44336;
+  color: white;
+}
+.demo-video-box {
+  background: linear-gradient(135deg, #424242, #1a1a1a);
+  color: #bdbdbd;
+  padding: 50px 20px;
+  margin-top: 10px;
+  font-size: 13px;
+  border-radius: 4px;
+  position: relative;
+}
+.demo-video-box::before {
+  content: "▶";
+  display: block;
+  font-size: 42px;
+  color: #e65100;
+  margin-bottom: 8px;
+}
+.demo-video-box::after {
+  content: "広告動画を再生中…  00:15 / 00:30";
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+  color: #757575;
+}
+
+/* 7. スポンサードコンテンツ (ネイティブ広告) */
+.demo-ad-sponsored {
+  background: #f3e5f5;
+  padding: 16px;
+  margin: 28px 0;
+  border-radius: 8px;
+}
+.demo-ad-sponsored h3 {
+  font-size: 11px;
+  color: white;
+  background: #ab47bc;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin: 0 0 14px;
+  font-weight: 700;
+}
+.demo-ad-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.demo-ad-card {
+  background: white;
+  padding: 14px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  line-height: 1.5;
+}
+.demo-ad-card .demo-thumb {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+/* 9. おすすめ記事ウィジェット (Taboola 風) */
+.demo-ad-recommend {
+  background: #f5f5f5;
+  padding: 16px;
+  margin: 28px 0;
+  border-radius: 8px;
+}
+.demo-ad-recommend h3 {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+.demo-ad-recommend .demo-ad-card {
+  background: #fff;
+}
+
+/* 10. 画面下フロート広告 (バリバリ邪魔) */
+.demo-ad-floating {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  color: white;
+  padding: 12px 14px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,.25);
+  z-index: 100;
+}
+.demo-ad-floating .demo-ad-label {
+  background: white;
+  color: #e65100;
+}
+
+/* =====================================
+ * ブロック状態 (URL パラメータで body に付与)
+ * ===================================== */
+
+/* 通常ブロック: 上部バナー / 緊急 / 事前 / 動画 / 下部フロート を除去
+ * (URL フィルタで止められる典型的な広告パターン) */
+body.block-standard .demo-ad-top,
+body.block-standard .demo-ad-sticky,
+body.block-standard .demo-ad-pre-article,
+body.block-standard .demo-ad-video,
+body.block-standard .demo-ad-floating {
+  display: none !important;
+}
+
+/* 強力ブロック: インライン / スポンサード / レコメンドも除去 (すべて) */
+body.block-strong .demo-ad-top,
+body.block-strong .demo-ad-sticky,
+body.block-strong .demo-ad-pre-article,
+body.block-strong .demo-ad-inline,
+body.block-strong .demo-ad-video,
+body.block-strong .demo-ad-sponsored,
+body.block-strong .demo-ad-recommend,
+body.block-strong .demo-ad-floating {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-brand">朝活ライフ</div>
+  <div class="site-nav">ホーム ・ 記事 ・ ランキング ・ コラム</div>
+</header>
+
+<!-- 1. 上部バナー広告 -->
+<div class="demo-ad-top">
+  <span class="demo-ad-label">広告</span>
+  🔥 春の大感謝セール開催中！全品 30% OFF
+</div>
+
+<!-- 2. 緊急セール風スティッキーバナー -->
+<div class="demo-ad-sticky">
+  <span class="demo-ad-label">PR</span>
+  ⚡ 残り 3 時間！今すぐクリックで特別価格
+</div>
+
+<article class="article">
+  <h1>朝を気持ちよく始める 5 つのコツ</h1>
+  <div class="byline">編集部 ・ 2026 年 4 月 20 日</div>
+
+  <!-- 3. 記事前 大型広告 -->
+  <div class="demo-ad-pre-article">
+    <span class="demo-ad-label">広告</span>
+    <strong>毎朝の習慣を変える話題のアイテム！</strong>
+    累計 10 万本突破の定番サプリメント
+    <div class="cta">▶ 詳しくはこちら</div>
+  </div>
+
+  <p>朝の時間の使い方で、その日 1 日の充実度は大きく変わります。本記事では、明日からすぐに実践できる簡単なコツを 5 つ紹介します。どれも特別な道具は不要で、今日から始められるものばかりです。</p>
+
+  <!-- 4. 本文中インライン広告 -->
+  <div class="demo-ad-inline">
+    <span class="demo-ad-label">広告</span>
+    <strong>🥗 朝食向け健康食品、定期便がお得！</strong>
+    初回限定 500 円で始められる
+  </div>
+
+  <h2>1. 決まった時間に起きる</h2>
+  <p>体内時計を整えるために、休日も平日と同じ時間に起床することを意識しましょう。毎日 15 分のずれでも、週末にリセットしようとすると余計に辛くなります。目覚まし時計を身体から遠い場所に置くのも効果的です。</p>
+
+  <!-- 5. 動画広告 -->
+  <div class="demo-ad-video">
+    <span class="demo-ad-label">動画広告</span>
+    <div class="demo-video-box"></div>
+  </div>
+
+  <h2>2. 朝日を浴びる</h2>
+  <p>太陽の光を浴びることでセロトニンが分泌され、気分が安定します。カーテンを開ける、ベランダに出るなど、まず光を取り入れましょう。曇りの日でも屋外の光は室内より遥かに強いので、5 分程度外に出るだけでも違います。</p>
+
+  <!-- 6. 本文中インライン広告 -->
+  <div class="demo-ad-inline">
+    <span class="demo-ad-label">PR</span>
+    <strong>💪 朝活向けオンラインヨガ</strong>
+    1 ヶ月間無料お試しキャンペーン実施中
+  </div>
+
+  <h2>3. 白湯を 1 杯飲む</h2>
+  <p>胃腸を優しく温めて、内臓の目覚めを促します。起床後すぐに飲むのがベストで、冷え性の方にもおすすめです。沸騰させたお湯を 50℃ 程度まで冷まして、ゆっくり飲みましょう。</p>
+
+  <h2>4. 軽いストレッチをする</h2>
+  <p>5 分間の簡単なストレッチで、体の血流を促進します。肩・背中・腰の順に動かすと効率的です。布団の上で行っても構いません。無理のない範囲で続けることが大切です。</p>
+
+  <!-- 7. スポンサードコンテンツ (ネイティブ広告) -->
+  <div class="demo-ad-sponsored">
+    <h3>スポンサード</h3>
+    <div class="demo-ad-cards">
+      <div class="demo-ad-card">
+        <div class="demo-thumb">🌟</div>
+        【PR】芸能人も愛用<br>話題の新アイテム
+      </div>
+      <div class="demo-ad-card">
+        <div class="demo-thumb">💊</div>
+        【PR】今話題のサプリ<br>効果を徹底検証
+      </div>
+      <div class="demo-ad-card">
+        <div class="demo-thumb">🎯</div>
+        【PR】3 日で変わる<br>驚きの新習慣
+      </div>
+      <div class="demo-ad-card">
+        <div class="demo-thumb">✨</div>
+        【PR】SNS で話題<br>今なら無料体験
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. 本文中インライン広告 -->
+  <div class="demo-ad-inline">
+    <span class="demo-ad-label">広告</span>
+    <strong>☕ こだわりコーヒー豆の定期便</strong>
+    自宅で本格的な朝を演出
+  </div>
+
+  <h2>5. スマホを見る前に、自分の時間を</h2>
+  <p>起きてすぐスマホを手に取るのではなく、5 分だけでも自分自身と向き合う時間を作りましょう。深呼吸したり、今日やることを頭の中で整理するだけで、1 日の始まりが大きく変わります。</p>
+
+  <p>以上、朝を気持ちよく始める 5 つのコツでした。すべてを一度にやる必要はありません。まずは 1 つだけ、明日から試してみてください。</p>
+
+  <!-- 9. おすすめ記事ウィジェット (Taboola 風) -->
+  <aside class="demo-ad-recommend">
+    <h3>こちらの記事もおすすめ</h3>
+    <div class="demo-ad-cards">
+      <div class="demo-ad-card">
+        <div class="demo-thumb">💪</div>
+        【PR】たった 1 週間<br>で変わる新習慣
+      </div>
+      <div class="demo-ad-card">
+        <div class="demo-thumb">🏃</div>
+        【PR】医師推奨<br>朝活に良い食品
+      </div>
+      <div class="demo-ad-card">
+        <div class="demo-thumb">🍵</div>
+        【PR】SNS で話題<br>の新ドリンク
+      </div>
+      <div class="demo-ad-card">
+        <div class="demo-thumb">🎁</div>
+        【PR】50% OFF<br>キャンペーン中
+      </div>
+    </div>
+  </aside>
+</article>
+
+<!-- 10. 画面下フロート広告 -->
+<div class="demo-ad-floating">
+  <span class="demo-ad-label">広告</span>
+  📱 アプリ DL で 500 円クーポンプレゼント！
+</div>
+
+<script>
+  // URL の ?block=standard / ?block=strong を読み取って body class を付与
+  (function(){
+    try {
+      var params = new URLSearchParams(location.search);
+      var level = (params.get('block') || 'none').toLowerCase();
+      if (level === 'standard' || level === 'strong') {
+        document.body.classList.add('block-' + level);
+      }
+    } catch (e) { /* noop */ }
+  })();
+</script>
+</body>
+</html>
