@@ -1,8 +1,14 @@
-# 09. 実践: ページ内検索をする
-
-> ← [08. 自動スクロール](08-practice-autoscroll.md) | 次へ → [10. ダイヤル編集](10-dial-customize.md)
-
 ---
+title: ページ内検索
+prev:
+  title: 自動スクロール
+  url: /08-practice-autoscroll
+next:
+  title: ダイヤルを編集する
+  url: /10-dial-customize
+---
+
+# 09. 実践: ページ内検索をする
 
 ## 🎯 この実践で覚えること
 
@@ -16,8 +22,7 @@
 
 サブメニュー → **🔍 ページ内検索** を選ぶと、画面上部に入力欄が表示されます。
 
-> 📸 **スクリーンショット S-27**: ページ内検索バー
-> 置き場所: `screenshots/s27-findinpage-bar.png`
+![ページ内検索バー](/screenshots/s27-findinpage-bar.png)
 
 ### ステップ 3: 検索ワードを入力
 
@@ -27,8 +32,7 @@
 - **件数表示**: 現在 n 件中 m 番目
 - **× ボタン**: 閉じる
 
-> 📸 **スクリーンショット S-28**: ハイライトされた検索結果
-> 置き場所: `screenshots/s28-findinpage-matches.png`
+![ハイライトされた検索結果](/screenshots/s28-findinpage-matches.png)
 
 ### ステップ 4: 閉じる
 
@@ -53,5 +57,3 @@
 
 ここまでで主要なダイヤル操作はすべてマスターできました。次のページでは、
 これらのダイヤル項目を **自分の使い方に合わせてカスタマイズ** する方法を紹介します。
-
-→ [10. ダイヤルを編集する](10-dial-customize.md)

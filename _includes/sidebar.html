@@ -1,0 +1,15 @@
+{% assign curr = page.url | remove_first: '/' | replace: '.html', '' %}
+{% for group in site.data.nav %}
+<div class="hm-sidebar-section">
+  <p class="hm-sidebar-heading">{{ group.heading }}</p>
+  <ul class="hm-sidebar-list">
+    {% for item in group.items %}
+    {% assign link = item.url | remove_first: '/' | replace: '.html', '' %}
+    <li>
+      <a class="hm-sidebar-link{% if link == curr or item.url == page.url %} active{% endif %}"
+         href="{{ item.url | relative_url }}">{{ item.label }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}

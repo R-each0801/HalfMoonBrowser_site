@@ -1,3 +1,7 @@
+---
+title: 利用規約
+---
+
 # HalfMoon Browser 利用規約
 
 最終更新日: 2026 年 4 月 21 日
@@ -115,7 +119,7 @@
 連絡先までお願いします。
 
 - メール: support@halfmoon-browser.example.com
-- プロジェクト: [GitHub] （URL は別リポジトリの README をご参照ください）
+- ウェブサイト: <https://r-each0801.github.io/HalfMoonBrowser_site/>
 
 ---
 

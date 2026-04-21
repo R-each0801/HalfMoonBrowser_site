@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2B3A67" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F1320" media="(prefers-color-scheme: dark)">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/halfmoon-glyph.svg' | relative_url }}">
+</head>
+<body>
+
+<header class="hm-header">
+  <a href="{{ '/' | relative_url }}" class="hm-brand">
+    <span class="hm-brand-glyph">{% include halfmoon-glyph.html %}</span>
+    <span>
+      <span class="hm-brand-title">HalfMoon</span>
+      <span class="hm-brand-subtitle" style="display:block; line-height:1;">Browser Manual</span>
+    </span>
+  </a>
+  <span class="hm-header-spacer"></span>
+  <button class="hm-nav-toggle" aria-label="ナビゲーションを開閉" onclick="toggleSidebar()">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="4" y1="7" x2="20" y2="7"/>
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <line x1="4" y1="17" x2="20" y2="17"/>
+    </svg>
+  </button>
+</header>
+
+<div class="hm-layout">
+  <aside class="hm-sidebar" id="hm-sidebar">
+    {% include sidebar.html %}
+  </aside>
+  <div class="hm-sidebar-backdrop" id="hm-sidebar-backdrop" onclick="toggleSidebar()"></div>
+
+  <main class="hm-main">
+    <article class="hm-content">
+      {{ content }}
+    </article>
+
+    {% if page.prev or page.next %}
+    <nav class="hm-pagination">
+      {% if page.prev %}
+      <a class="hm-pagination-link hm-pagination-prev" href="{{ page.prev.url | relative_url }}">
+        <div class="hm-pagination-label">← 前へ</div>
+        <div class="hm-pagination-title">{{ page.prev.title }}</div>
+      </a>
+      {% else %}
+      <span class="hm-pagination-link hm-pagination-empty"></span>
+      {% endif %}
+      {% if page.next %}
+      <a class="hm-pagination-link hm-pagination-next" href="{{ page.next.url | relative_url }}">
+        <div class="hm-pagination-label">次へ →</div>
+        <div class="hm-pagination-title">{{ page.next.title }}</div>
+      </a>
+      {% else %}
+      <span class="hm-pagination-link hm-pagination-empty"></span>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </main>
+</div>
+
+<footer class="hm-footer">
+  <p>
+    <a href="{{ '/' | relative_url }}">マニュアル</a> ·
+    <a href="{{ '/terms' | relative_url }}">利用規約</a> ·
+    <a href="{{ '/privacy' | relative_url }}">プライバシーポリシー</a>
+  </p>
+  <p>© 2026 HalfMoon Browser</p>
+</footer>
+
+<script>
+function toggleSidebar() {
+  document.getElementById('hm-sidebar').classList.toggle('open');
+  document.getElementById('hm-sidebar-backdrop').classList.toggle('visible');
+}
+</script>
+
+</body>
+</html>

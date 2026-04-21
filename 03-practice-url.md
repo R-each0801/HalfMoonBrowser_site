@@ -1,8 +1,14 @@
-# 03. 実践: URL・検索バーを呼び出す
-
-> ← [02. ダイヤルの基本](02-dial-concept.md) | 次へ → [04. ナビゲーション](04-practice-navigation.md)
-
 ---
+title: URL・検索バーを呼び出す
+prev:
+  title: ダイヤルの基本
+  url: /02-dial-concept
+next:
+  title: 戻る・進む・ホーム・タブ開閉
+  url: /04-practice-navigation
+---
+
+# 03. 実践: URL・検索バーを呼び出す
 
 ## 🎯 この実践で覚えること
 
@@ -16,9 +22,7 @@
 
 画面の **右端**（右辺）に指を置きます。
 
-> 📸 **スクリーンショット S-07**: 右端にタッチした瞬間
-> 置き場所: `screenshots/s07-touch-right-edge.png`
-
+![右端にタッチした瞬間](/screenshots/s07-touch-right-edge.png)
 右ダイヤルが半円状に展開されます。上から順に:
 
 1. 🔍 **検索・URL** ← 今回これを使います
@@ -32,16 +36,14 @@
 指を離さず、そのまま **上** に動かします。一番上の「検索・URL」が
 ハイライト表示され、軽い振動が返ってきます。
 
-> 📸 **スクリーンショット S-08**: 「検索・URL」がハイライト中
-> 置き場所: `screenshots/s08-urlinput-highlight.png`
+![「検索・URL」がハイライト中](/screenshots/s08-urlinput-highlight.png)
 
 ### ステップ 3: 指を離す
 
 ハイライトされた状態で指を離すと、**検索バー** が画面上部に現れて
 キーボードが開きます。
 
-> 📸 **スクリーンショット S-09**: 検索バー表示 + キーボード
-> 置き場所: `screenshots/s09-search-bar-open.png`
+![検索バー表示 + キーボード](/screenshots/s09-search-bar-open.png)
 
 ### ステップ 4: 入力して確定
 
@@ -66,5 +68,3 @@
 - [ ] URL / 検索ワードどちらでもページを開ける
 
 できたら次のページへ！
-
-→ [04. 戻る・進む・ホーム・タブを開閉する](04-practice-navigation.md)

@@ -1,8 +1,14 @@
-# 14. 表示（ダークモード・スーパーダーク）
-
-> ← [13. 広告ブロック詳細](13-adblock-settings.md) | 次へ → [15. データ管理](15-data-management.md)
-
 ---
+title: 表示 (ダークモード)
+prev:
+  title: 広告ブロックの詳細設定
+  url: /13-adblock-settings
+next:
+  title: データ管理
+  url: /15-data-management
+---
+
+# 14. 表示（ダークモード・スーパーダーク）
 
 ## 強制ダークモード
 
@@ -15,8 +21,7 @@
 - サイトが独自のダークテーマを持っている場合（`prefers-color-scheme: dark` 対応）
   は、そちらが優先されるので強制ダークを OFF にしたほうがきれいです
 
-> 📸 **スクリーンショット S-38**: 強制ダーク ON / OFF 対比
-> 置き場所: `screenshots/s38-force-dark-compare.png`
+![強制ダーク ON / OFF 対比](/screenshots/s38-force-dark-compare.png)
 
 ## スーパーダーク
 
@@ -26,9 +31,7 @@
 - 暗さは **10% 〜 85%** で調整
 - ダイヤル項目の **「スーパーダーク」** でワンタップ切替えも可能
 
-> 📸 **スクリーンショット S-39**: スーパーダーク 50% 適用中
-> 置き場所: `screenshots/s39-superdark.png`
-
+![スーパーダーク 50% 適用中](/screenshots/s39-superdark.png)
 強制ダークモードと併用できます:
 
 - 強制ダーク = 反転表示
@@ -40,7 +43,3 @@
 
 - ダイヤルに「スーパーダーク」を追加しておくと、寝室とリビングで瞬時に切替えられて便利
 - 強制ダークだけ OFF、スーパーダーク ON でも、昼間の眩しさ対策に使える
-
----
-
-→ [15. データ管理](15-data-management.md)

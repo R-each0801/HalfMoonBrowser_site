@@ -1,8 +1,14 @@
-# 15. データ管理
-
-> ← [14. 表示](14-display.md) | 次へ → [16. iOS 連携](16-ios-integration.md)
-
 ---
+title: データ管理
+prev:
+  title: 表示 (ダークモード)
+  url: /14-display
+next:
+  title: iOS との連携
+  url: /16-ios-integration
+---
+
+# 15. データ管理
 
 設定 → **「データ管理」** から、以下のデータを一括で管理できます。
 
@@ -23,8 +29,7 @@
 - サイトごとにユーザー名 / パスワードを確認
 - 不要なものは削除
 
-> 📸 **スクリーンショット S-40**: 保存パスワード一覧
-> 置き場所: `screenshots/s40-passwords.png`
+![保存パスワード一覧](/screenshots/s40-passwords.png)
 
 ## サイトデータを管理
 
@@ -35,8 +40,7 @@
 - スワイプで個別削除
 - 一括削除ボタンあり
 
-> 📸 **スクリーンショット S-41**: サイトデータ一覧
-> 置き場所: `screenshots/s41-site-data.png`
+![サイトデータ一覧](/screenshots/s41-site-data.png)
 
 ## ダウンロード
 
@@ -54,8 +58,7 @@
 - ダウンロード完了後は、iOS の「ファイル」アプリの
   **「HalfMoon」フォルダ** からもアクセスできます
 
-> 📸 **スクリーンショット S-42**: ダウンロード一覧
-> 置き場所: `screenshots/s42-downloads.png`
+![ダウンロード一覧](/screenshots/s42-downloads.png)
 
 ## 履歴
 
@@ -74,7 +77,3 @@
 ### プライベート
 
 プライベートブラウザ中の閲覧は **履歴に一切記録されません**。
-
----
-
-→ [16. iOS との連携](16-ios-integration.md)

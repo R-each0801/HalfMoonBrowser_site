@@ -1,8 +1,14 @@
-# 17. Pro 版について
-
-> ← [16. iOS 連携](16-ios-integration.md) | 次へ → [18. FAQ](18-faq.md)
-
 ---
+title: Pro 版
+prev:
+  title: iOS との連携
+  url: /16-ios-integration
+next:
+  title: よくある質問
+  url: /18-faq
+---
+
+# 17. Pro 版について
 
 ## Pro 版で解放される機能
 
@@ -10,8 +16,7 @@
 
 通常版は左右・サブメニュー各 **6 項目** まで。Pro 版は **各 12 項目** に増えます。
 
-> 📸 **スクリーンショット S-46**: Pro 版の 12 項目ダイヤル
-> 置き場所: `screenshots/s46-pro-12-items.png`
+![Pro 版の 12 項目ダイヤル](/screenshots/s46-pro-12-items.png)
 
 ### 2. プライベート専用のお気に入り
 
@@ -21,14 +26,7 @@
 - 通常モード: 仕事・日常用のお気に入り
 - プライベートモード: 趣味・プライベート用
 
-> 📸 **スクリーンショット S-47**: プライベート専用お気に入り ON
-> 置き場所: `screenshots/s47-pro-private-bookmarks.png`
-
-### 3. 今後追加予定
-
-- 広告ブロックのリモート購読フィルタ
-- お気に入り / 履歴の iCloud 同期
-- カスタムテーマ（配色プリセット）
+![プライベート専用お気に入り ON](/screenshots/s47-pro-private-bookmarks.png)
 
 ## 購入
 
@@ -46,7 +44,3 @@
 ## Family Sharing
 
 App Store の **Family Sharing** に対応しています。家族メンバーで 1 購入を共有可能。
-
----
-
-→ [18. よくある質問](18-faq.md)

@@ -1,0 +1,39 @@
+# サイドバーナビゲーション構造
+- heading: はじめに
+  items:
+    - { label: ホーム, url: / }
+    - { label: インストールと初回起動, url: /01-setup }
+    - { label: ダイヤルの基本, url: /02-dial-concept }
+
+- heading: 実践
+  items:
+    - { label: URL・検索, url: /03-practice-url }
+    - { label: ナビゲーション, url: /04-practice-navigation }
+    - { label: サブメニュー, url: /05-practice-submenu }
+    - { label: ブックマーク, url: /06-practice-bookmark-scroll }
+    - { label: 広告を消す, url: /07-practice-adblock-select }
+    - { label: 自動スクロール, url: /08-practice-autoscroll }
+    - { label: ページ内検索, url: /09-practice-findinpage }
+
+- heading: カスタマイズ
+  items:
+    - { label: ダイヤル編集, url: /10-dial-customize }
+    - { label: スタートページ, url: /11-startpage }
+
+- heading: 機能リファレンス
+  items:
+    - { label: プライベートブラウザ, url: /12-private }
+    - { label: 広告ブロック詳細, url: /13-adblock-settings }
+    - { label: 表示, url: /14-display }
+    - { label: データ管理, url: /15-data-management }
+    - { label: iOS 連携, url: /16-ios-integration }
+    - { label: Pro 版, url: /17-pro }
+
+- heading: サポート
+  items:
+    - { label: よくある質問, url: /18-faq }
+
+- heading: 規約
+  items:
+    - { label: 利用規約, url: /terms }
+    - { label: プライバシーポリシー, url: /privacy }

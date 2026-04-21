@@ -1,86 +1,115 @@
-# スクリーンショット撮影ガイド
+# スクリーンショット撮影指示書
 
-マニュアルに埋め込む各スクリーンショットの **一覧** と **撮影のコツ** をまとめた
-チェックリストです。
+<!-- この README は Jekyll の exclude で公開されません。撮影スタッフ向けの内部資料です。 -->
+
+各章に埋め込むスクリーンショットの **撮影チェックリスト** です。
+優先度・画面状態・撮影のコツをまとめています。
 
 ## 撮影仕様
 
-- **推奨端末**: iPhone 14 Pro 相当（1179×2556）
-- **向き**: 縦向き
-- **ステータスバー**: 時刻は整える（例: 9:41）と Apple 風に
-- **ファイル形式**: PNG
-- **命名規則**: `sXX-短い説明.png` （例: `s01-appstore.png`）
-- **保存場所**: このディレクトリ（`manual/screenshots/`）直下
+| 項目 | 値 |
+|---|---|
+| 推奨端末 | iPhone 14 Pro / 15 Pro 相当 (1179×2556) |
+| 向き | 縦向き |
+| ステータスバー | 時刻 9:41 (可能なら) |
+| 端末外観 | ダークモード OFF を基本 (明記がない限り) |
+| ファイル形式 | PNG (透過なし) |
+| 命名 | `sXX-短い説明.png` |
+| 保存先 | `screenshots/` 直下 |
+
+## 優先度
+
+- 🔴 **必須**: 本文がこの画像なしに成立しない
+- 🟡 **推奨**: あると理解が大幅に早くなる
+- 🟢 **任意**: 余裕があれば
+
+## 撮影前の準備 (全章共通)
+
+1. アプリを 1 度アンインストールして再インストール (設定を初期化)
+2. 以下のタイルをスタートページに追加して撮影用の状態にする:
+   - `https://ja.wikipedia.org/`
+   - `https://github.com/`
+   - `https://www.apple.com/jp/`
+3. 撮影用タブで `https://ja.wikipedia.org/wiki/iPhone` を開いておく (長い記事の見本に使う)
+
+---
 
 ## チェックリスト
 
-各項目の説明はマニュアル本文の該当ページ（`NN-xxx.md`）を参照してください。
+### はじめに (01-setup / 02-dial-concept)
 
-| No. | ファイル名 | 使用ページ | 内容 |
-|-----|------------|-----------|------|
-| S-01 | `s01-appstore.png` | 01-setup | App Store の HalfMoon ページ |
-| S-02 | `s02-startpage-initial.png` | 01-setup | 初回起動時のスタートページ |
-| S-03 | `s03-default-dial.png` | 01-setup | 左右ダイヤル展開時の比較図 |
-| S-04 | `s04-right-dial-open.png` | 02-dial-concept | 右ダイヤル展開中の静止画 |
-| S-05 | `s05-interaction-mode.png` | 02-dial-concept | 設定「操作モード」Picker |
-| S-06 | `s06-dial-size.png` | 02-dial-concept | 設定「サイズ」スライダー |
-| S-07 | `s07-touch-right-edge.png` | 03-practice-url | 右端にタッチした瞬間 |
-| S-08 | `s08-urlinput-highlight.png` | 03-practice-url | 「検索・URL」ハイライト中 |
-| S-09 | `s09-search-bar-open.png` | 03-practice-url | 検索バー + キーボード |
-| S-10 | `s10-back-forward.png` | 04-practice-navigation | 戻る / 進むのハイライト対比 |
-| S-11 | `s11-home-return.png` | 04-practice-navigation | ホームで戻った直後のスタートページ |
-| S-12 | `s12-new-tab.png` | 04-practice-navigation | 新規タブ後のタブ一覧 |
-| S-13 | `s13-close-tab.png` | 04-practice-navigation | 閉じる直前と直後のタブストリップ |
-| S-14 | `s14-submenu-open.png` | 05-practice-submenu | サブメニュー展開中 |
-| S-15 | `s15-submenu-highlight.png` | 05-practice-submenu | 「サブメニュー」ハイライト中 |
-| S-16 | `s16-submenu-list-slide.png` | 05-practice-submenu | リリース直後 → 縦リストを上下選択中 |
-| S-17 | `s17-tab-list-sheet.png` | 05-practice-submenu | タブ一覧シート |
-| S-18 | `s18-add-bookmark-toast.png` | 06-practice-bookmark-scroll | ブックマーク追加トースト |
-| S-19 | `s19-new-bookmark-tile.png` | 06-practice-bookmark-scroll | スタートページに追加されたタイル |
-| S-20 | `s20-scroll-to-top.png` | 06-practice-bookmark-scroll | 「ページ最上部」ハイライト |
-| S-21 | `s21-adpicker-start.png` | 07-practice-adblock-select | 広告ピッカー起動直後 |
-| S-22 | `s22-adpicker-bar.png` | 07-practice-adblock-select | ピッカー操作バー |
-| S-23 | `s23-adpicker-parent.png` | 07-practice-adblock-select | 「親」ボタンで範囲を広げた状態 |
-| S-24 | `s24-hidden-selectors-view.png` | 07-practice-adblock-select | 消した広告の管理画面 |
-| S-25 | `s25-autoscroll-active.png` | 08-practice-autoscroll | 自動スクロール中のオーバーレイ |
-| S-26 | `s26-autoscroll-speed.png` | 08-practice-autoscroll | 速度スライダー |
-| S-27 | `s27-findinpage-bar.png` | 09-practice-findinpage | ページ内検索バー |
-| S-28 | `s28-findinpage-matches.png` | 09-practice-findinpage | ハイライトされた検索結果 |
-| S-29 | `s29-dial-edit.png` | 10-dial-customize | ダイヤル編集画面 |
-| S-30 | `s30-drag-handle.png` | 10-dial-customize | 項目の右端ハンバーガー |
-| S-31 | `s31-action-picker.png` | 10-dial-customize | 項目追加ピッカー |
-| S-32 | `s32-startpage-full.png` | 11-startpage | スタートページ全景 |
-| S-33 | `s33-startpage-edit.png` | 11-startpage | 編集モードと ＋ タイル |
-| S-34 | `s34-startpage-folder.png` | 11-startpage | フォルダ作成後 |
-| S-35 | `s35-private-mode.png` | 12-private | プライベートモード中の画面 |
-| S-36 | `s36-adblock-settings.png` | 13-adblock-settings | 広告ブロック設定画面 |
-| S-37 | `s37-custom-filter.png` | 13-adblock-settings | カスタムフィルタ画面 |
-| S-38 | `s38-force-dark-compare.png` | 14-display | 強制ダーク ON / OFF 対比 |
-| S-39 | `s39-superdark.png` | 14-display | スーパーダーク 50% 適用中 |
-| S-40 | `s40-passwords.png` | 15-data-management | 保存パスワード一覧 |
-| S-41 | `s41-site-data.png` | 15-data-management | サイトデータ一覧 |
-| S-42 | `s42-downloads.png` | 15-data-management | ダウンロード一覧 |
-| S-43 | `s43-icloud-sync.png` | 16-ios-integration | iCloud 同期トグル + 最終同期 |
-| S-44 | `s44-default-browser.png` | 16-ios-integration | iOS 設定のデフォルトブラウザ欄 |
-| S-45 | `s45-share-extension.png` | 16-ios-integration | 共有シートに HalfMoon が並ぶ |
-| S-46 | `s46-pro-12-items.png` | 17-pro | Pro 版の 12 項目ダイヤル |
-| S-47 | `s47-pro-private-bookmarks.png` | 17-pro | プライベート専用お気に入り ON |
+| No. | 優先 | ファイル | 画面状態 | 注意点 |
+|-----|:---:|----------|---------|--------|
+| S-01 | 🟡 | `s01-appstore.png` | App Store の HalfMoon ページ | 検索結果ではなく詳細ページ全体 |
+| S-02 | 🔴 | `s02-startpage-initial.png` | 初回起動時のスタートページ全景 | タイル 3 つのみ、お気に入り少なめに |
+| S-03 | 🔴 | `s03-default-dial.png` | 左右ダイヤル展開時の比較図 | 左右を別々に撮って横並び合成でも可 |
+| S-04 | 🔴 | `s04-right-dial-open.png` | 右ダイヤル展開中 (静止) | 指は写さず、ダイヤル本体のみ見える状態 |
+| S-05 | 🟡 | `s05-interaction-mode.png` | 設定 → ダイヤル → 操作モード Picker 展開 | Picker が開いた状態 |
+| S-06 | 🟢 | `s06-dial-size.png` | 設定 → ダイヤル → サイズスライダー | 1.2x 付近に合わせる |
 
-合計: **47 枚**
+### 実践章 (03-practice-url ～ 09)
 
-## 撮影の流れ（おすすめ）
+| No. | 優先 | ファイル | 画面状態 | 注意点 |
+|-----|:---:|----------|---------|--------|
+| S-07 | 🟡 | `s07-touch-right-edge.png` | 右端タッチの瞬間 (ダイヤル展開中途) | 指を画面外から入れた風の演出で |
+| S-08 | 🔴 | `s08-urlinput-highlight.png` | 「検索・URL」ハイライト中 | 軽く光っているのが伝わる明るさで |
+| S-09 | 🔴 | `s09-search-bar-open.png` | 検索バー + キーボード | 入力欄は空 |
+| S-10 | 🔴 | `s10-back-forward.png` | 「戻る」と「進む」のハイライト (横並び合成) | 2 枚を合成 or 矢印つきで 1 枚 |
+| S-11 | 🟢 | `s11-home-return.png` | ホーム押した直後のスタートページ | S-02 と差別化するため別の履歴が見える状態に |
+| S-12 | 🟡 | `s12-new-tab.png` | 新規タブ追加直後のタブ一覧 | タブストリップが 2 つ以上見える |
+| S-13 | 🟢 | `s13-close-tab.png` | タブを閉じる直前 (ハイライト) | 「×タブを閉じる」を強調 |
+| S-14 | 🔴 | `s14-submenu-open.png` | サブメニュー縦リスト展開中 | 全 6 項目が見える |
+| S-15 | 🟡 | `s15-submenu-highlight.png` | 左ダイヤル「サブメニュー」ハイライト中 | ダイヤル→縦リストの分岐ポイント |
+| S-16 | 🟢 | `s16-submenu-list-slide.png` | 縦リスト内を選択中 | 1 項目だけハイライト |
+| S-17 | 🟡 | `s17-tab-list-sheet.png` | タブ一覧シート | タブのサムネが 2〜3 枚見える |
+| S-18 | 🟡 | `s18-add-bookmark-toast.png` | 「ブックマーク追加」トースト | 「追加しました」のトーストが画面下に出ている瞬間 |
+| S-19 | 🟢 | `s19-new-bookmark-tile.png` | 追加されたタイルが並ぶスタートページ | 新タイルが 1 つ増えているのがわかるように |
+| S-20 | 🟢 | `s20-scroll-to-top.png` | 「ページ最上部」ハイライト中の左ダイヤル | |
+| S-21 | 🔴 | `s21-adpicker-start.png` | 広告ピッカー起動直後 | 下部バーが出ている状態 |
+| S-22 | 🟡 | `s22-adpicker-bar.png` | ピッカー下部操作バーのアップ | 「親」「非表示」「キャンセル」が見える |
+| S-23 | 🟡 | `s23-adpicker-parent.png` | 「親」ボタンで範囲を広げた状態 | 広告全体が薄く選択されている |
+| S-24 | 🟡 | `s24-hidden-selectors-view.png` | 設定 → 広告ブロック → 消した広告の管理 | サイト 2 つ以上の状態 |
+| S-25 | 🟡 | `s25-autoscroll-active.png` | 自動スクロール中の画面 | スクロール中のページ途中 |
+| S-26 | 🟢 | `s26-autoscroll-speed.png` | 自動スクロールの速度スライダー | 2.0x 付近 |
+| S-27 | 🔴 | `s27-findinpage-bar.png` | ページ内検索バー (上部) + キーボード | 入力欄は空 |
+| S-28 | 🟡 | `s28-findinpage-matches.png` | ハイライトされた検索結果 | `iPhone` で検索など、結果が複数見える状態 |
 
-1. **設定リセット**: 新規インストール状態 or 「デフォルトに戻す」で初期状態を作る
-2. **時計固定 (任意)**: ダークモード + 時刻 9:41 のステータスバーに統一
-3. **順番に撮影**: S-01 から順に撮影していくと漏れにくい
-4. **命名して保存**: このディレクトリに `sXX-xxx.png` で配置
-5. **マニュアルを通読**: 各ページでスクリーンショットが正しく表示されるか確認
+### カスタマイズ (10-11)
+
+| No. | 優先 | ファイル | 画面状態 | 注意点 |
+|-----|:---:|----------|---------|--------|
+| S-29 | 🔴 | `s29-dial-edit.png` | 設定 → ダイヤル編集 | 3 セクションが見える程度まで縮小表示 |
+| S-30 | 🟡 | `s30-drag-handle.png` | 項目行の右端ハンバーガーのアップ | 1 行 + ハンバーガーアイコンにフォーカス |
+| S-31 | 🔴 | `s31-action-picker.png` | 項目追加ピッカー | グレーアウト項目 + 通常項目 両方見える状態 |
+| S-32 | 🔴 | `s32-startpage-full.png` | スタートページ全景 | お気に入り 6〜8 タイル + フォルダ 1 つ |
+| S-33 | 🟡 | `s33-startpage-edit.png` | スタートページ編集モード | タイルに削除ボタン (赤丸) が出ている |
+| S-34 | 🟢 | `s34-startpage-folder.png` | フォルダを開いた状態 | フォルダ内に 2〜3 タイル |
+
+### 機能リファレンス (12-17)
+
+| No. | 優先 | ファイル | 画面状態 | 注意点 |
+|-----|:---:|----------|---------|--------|
+| S-35 | 🔴 | `s35-private-mode.png` | プライベートモード中 | ダークな UI がわかるよう、ツールバーまで含めて撮影 |
+| S-36 | 🔴 | `s36-adblock-settings.png` | 設定 → 広告ブロックセクション全体 | 4 項目 + 「消した広告の管理」バッジが見える |
+| S-37 | 🟢 | `s37-custom-filter.png` | カスタムフィルタ画面 | 1〜2 件の例が入っている状態 |
+| S-38 | 🔴 | `s38-force-dark-compare.png` | 強制ダーク ON / OFF 対比 | Wikipedia のような白基調サイトで 2 枚横並び |
+| S-39 | 🟡 | `s39-superdark.png` | スーパーダーク 50% 適用中 | 明るい写真があるページで撮ると差が伝わる |
+| S-40 | 🔴 | `s40-passwords.png` | Face ID 認証後の保存パスワード一覧 | 実在しないダミーサイト (example.com) のみ |
+| S-41 | 🟡 | `s41-site-data.png` | サイトデータ一覧 | 5〜10 サイト分のサイズがリストされた状態 |
+| S-42 | 🟡 | `s42-downloads.png` | ダウンロード一覧 | 完了 2 件 + 進行中 1 件の混在が理想 |
+| S-43 | 🔴 | `s43-icloud-sync.png` | 設定 → iOS → iCloud 同期トグル + 最終同期時刻 | Apple ID サインイン済み環境で撮影 |
+| S-44 | 🟡 | `s44-default-browser.png` | iOS 設定のデフォルトブラウザ欄 | HalfMoon が選択肢に出ている状態 |
+| S-45 | 🟡 | `s45-share-extension.png` | iOS 共有シートに HalfMoon が並ぶ | Safari 等から「共有」を開いた状態 |
+| S-46 | 🟢 | `s46-pro-12-items.png` | Pro 版の 12 項目ダイヤル | Pro 購入済みアカウントで撮影 |
+| S-47 | 🟢 | `s47-pro-private-bookmarks.png` | プライベート専用お気に入り ON 状態 | 通常と違うお気に入りが並んでいるのがわかるように |
+
+## 撮影の流れ (推奨)
+
+1. 🔴 **必須マーク** から先に撮る (17 枚)
+2. 通し読みしてみて、説明で詰まる章があれば対応する 🟡 を追加
+3. Pro / iCloud など設定が必要なものは最後にまとめて
 
 ## 注意事項
 
-- **Pro 版スクショ**: S-46, S-47 は Pro 購入済み状態 or デバッグモード
-  （バージョン 10 連打）で「Pro 機能解放」状態にして撮影
-- **プライベートモード**: S-35 は 1 度 Face ID 認証を通過した状態で撮影
-- **個人情報**: 履歴 / お気に入りに実際のサイト名が入る場合、公開可能な
-  サイト（Wikipedia / 公式サイト等）だけ残してから撮影
-- **iCloud**: S-43 は Apple ID サインイン済みのビルドで撮影
+- **個人情報**: 履歴・お気に入りに実在サイト名が並ぶ場合、Wikipedia / Apple.com / GitHub など公開可能なサイトのみに
+- **ダミーデータ**: パスワード画面は `example.com` / `user@example.com` 等の実在しないデータで

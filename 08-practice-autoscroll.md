@@ -1,8 +1,14 @@
-# 08. 実践: 自動スクロールを使う
-
-> ← [07. 広告を消す](07-practice-adblock-select.md) | 次へ → [09. ページ内検索](09-practice-findinpage.md)
-
 ---
+title: 自動スクロール
+prev:
+  title: 広告を手動で消す
+  url: /07-practice-adblock-select
+next:
+  title: ページ内検索
+  url: /09-practice-findinpage
+---
+
+# 08. 実践: 自動スクロールを使う
 
 ## 🎯 この実践で覚えること
 
@@ -22,8 +28,7 @@
 
 スクロールが **開始** され、画面は自動でゆっくり下に流れていきます。
 
-> 📸 **スクリーンショット S-25**: 自動スクロール中のオーバーレイインジケータ
-> 置き場所: `screenshots/s25-autoscroll-active.png`
+![自動スクロール中のオーバーレイインジケータ](/screenshots/s25-autoscroll-active.png)
 
 ### ステップ 3: 停止
 
@@ -35,9 +40,7 @@
 
 - 設定 → 「ページ操作」→ **「自動スクロールの速度」** スライダー
 
-> 📸 **スクリーンショット S-26**: 速度スライダー
-> 置き場所: `screenshots/s26-autoscroll-speed.png`
-
+![速度スライダー](/screenshots/s26-autoscroll-speed.png)
 速度の目安:
 
 - **0.5x〜1.0x**: じっくり読みたい小説 / 技術記事
@@ -55,5 +58,3 @@
 - [ ] サブメニューから自動スクロールを開始できる
 - [ ] 画面タップで停止できる
 - [ ] 好みの速度に調整できる
-
-→ [09. ページ内検索をする](09-practice-findinpage.md)
