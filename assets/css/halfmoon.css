@@ -602,6 +602,47 @@ body.hm-body-cover {
   transform: none;
   box-shadow: var(--hm-shadow-sm);
 }
+
+/* ============================================
+ * 広告ブロック Before/After 比較 (3 状態横並び)
+ * ============================================ */
+.hm-adblock-compare {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+}
+.hm-adblock-compare-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hm-adblock-compare-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hm-text-secondary);
+  letter-spacing: 0.02em;
+}
+.hm-adblock-compare-note {
+  font-size: 11px;
+  color: var(--hm-text-tertiary);
+  margin-top: -2px;
+}
+.hm-content .hm-adblock-compare img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: var(--hm-radius-sm);
+  border: 1px solid var(--hm-separator);
+  box-shadow: var(--hm-shadow-sm);
+}
+@media (max-width: 640px) {
+  .hm-adblock-compare {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
 .hm-card-num {
   font-size: 11px;
   color: var(--hm-accent);
