@@ -122,14 +122,20 @@ body {
 
 .hm-nav-toggle {
   display: none;
-  background: transparent;
+  background: var(--hm-accent);
+  color: var(--hm-accent-on);
   border: 0;
-  color: var(--hm-text);
-  padding: 8px;
+  padding: 10px 12px;
   border-radius: var(--hm-radius-sm);
   cursor: pointer;
+  box-shadow: var(--hm-shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.hm-nav-toggle:hover { background: var(--hm-surface-alt); }
+.hm-nav-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--hm-shadow);
+}
+.hm-nav-toggle:active { transform: translateY(0); }
 
 /* ============================================
  * レイアウト (sidebar + main)
@@ -405,18 +411,21 @@ body {
     width: var(--hm-sidebar-w);
     max-width: 80vw;
     height: calc(100vh - 60px);
-    z-index: 40;
+    z-index: 45;
     transform: translateX(-100%);
     transition: transform 0.25s ease;
     box-shadow: var(--hm-shadow-lg);
+    /* モバイルでサイドバーを不透明にする (透けないよう明示) */
+    background-color: var(--hm-surface);
+    isolation: isolate;
   }
   .hm-sidebar.open { transform: translateX(0); }
 
   .hm-sidebar-backdrop {
     position: fixed;
     inset: 60px 0 0 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 39;
+    background: rgba(15, 19, 32, 0.5);
+    z-index: 44;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease;
