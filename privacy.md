@@ -159,7 +159,7 @@ Pro 版購入時は、Apple の StoreKit API を通じて App Store に購入リ
 
 本ポリシーに関するお問い合わせは、以下までお願いします。
 
-- メール: privacy@halfmoon-browser.example.com
+- メール: [reach.app.support@gmail.com](mailto:reach.app.support@gmail.com)
 - ウェブサイト: <https://r-each0801.github.io/HalfMoonBrowser_site/>
 
 ---

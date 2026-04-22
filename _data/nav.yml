@@ -5,6 +5,10 @@
     - { label: ダイヤル操作, url: /dial/ }
     - { label: 機能一覧, url: /features/ }
 
+- heading: サポート
+  items:
+    - { label: お問い合わせ / FAQ, url: /support/ }
+
 - heading: 規約
   items:
     - { label: 利用規約, url: /terms/ }

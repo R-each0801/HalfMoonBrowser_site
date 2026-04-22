@@ -119,7 +119,7 @@ title: 利用規約
 本規約に関するお問い合わせは、本アプリ内の「問い合わせ」項目、または以下の
 連絡先までお願いします。
 
-- メール: support@halfmoon-browser.example.com
+- メール: [reach.app.support@gmail.com](mailto:reach.app.support@gmail.com)
 - ウェブサイト: <https://r-each0801.github.io/HalfMoonBrowser_site/>
 
 ---
