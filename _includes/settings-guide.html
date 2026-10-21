@@ -17,7 +17,8 @@
 <p class="hm-set-summary">{{ pg.summary }}</p>
 {%- for sec in pg.sections -%}
 <div class="hm-set-section">
-{%- if sec.name != pg.name -%}<p class="hm-set-section-name">{{ sec.name }}</p>{%- endif -%}
+{%- assign hm_only = sec.items | first -%}
+{%- if sec.name != pg.name and sec.name != hm_only.name -%}<p class="hm-set-section-name">{{ sec.name }}</p>{%- endif -%}
 <dl class="hm-set-list">
 {%- for it in sec.items -%}
 <div class="hm-set-item" id="{{ it.id }}">
