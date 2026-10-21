@@ -1,4 +1,7 @@
 ---
+# CSS には default レイアウト (_config.yml の defaults) を適用しない。
+# 適用されると CSS の前に HTML が付き、先頭の :root ルールが読み飛ばされてレイアウトが崩れる。
+layout: null
 ---
 /*
  * HalfMoon Browser — 公式サイト スタイル
