@@ -914,12 +914,12 @@ body { font-family: var(--hm-font-body); letter-spacing: 0.02em; }
   border-radius: 999px; background: var(--hm-surface-alt);
 }
 .hm-dialmap-screen { position: absolute; inset: 64px 72px 60px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
-.hm-dialmap-screen i { display: block; height: 6px; border-radius: 3px; background: var(--hm-surface-alt); }
+.hm-dialmap-screen i { display: block; height: 6px; border-radius: 3px; background: var(--hm-surface-alt); opacity: .7; }
 .hm-dialmap-screen i:nth-child(3n) { width: 70%; }
 .hm-dialmap-screen i:nth-child(3n+2) { width: 88%; }
 .hm-content .hm-dialmap-col {
   position: absolute; top: 50%; transform: translateY(-50%); list-style: none; margin: 0; padding: 0;
-  display: flex; flex-direction: column; gap: 9px;
+  display: flex; flex-direction: column; gap: 9px; z-index: 2;
 }
 .hm-dialmap-left { left: 10px; align-items: flex-start; }
 .hm-dialmap-right { right: 10px; align-items: flex-end; }
@@ -951,3 +951,9 @@ body { font-family: var(--hm-font-body); letter-spacing: 0.02em; }
 .hm-action-group dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid var(--hm-separator); }
 .hm-action-group dt { font-weight: 700; font-size: 14px; color: var(--hm-text); white-space: nowrap; }
 .hm-action-group dd { margin: 0; font-size: 13px; color: var(--hm-text-tertiary); text-align: right; }
+
+/* スマホ幅: 閉じているサイドバーの影が画面の左端に漏れないよう、開いたときだけ影を付ける */
+@media (max-width: 960px) {
+  .hm-sidebar { box-shadow: none; }
+  .hm-sidebar.open { box-shadow: 4px 0 28px rgba(15, 19, 32, 0.18); }
+}
