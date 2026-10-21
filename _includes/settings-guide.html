@@ -1,0 +1,41 @@
+{%- comment -%}
+設定ガイドの一覧。内容はすべて _data/settings.yml から作る (このファイルは見た目だけ)。
+{%- endcomment -%}
+<nav class="hm-toc" aria-label="設定の目次">
+{%- for cat in site.data.settings -%}
+<div class="hm-toc-group"><p class="hm-toc-head">{{ cat.category }}</p><ul>
+{%- for pg in cat.pages -%}<li><a href="#{{ pg.id }}">{{ pg.name }}</a></li>{%- endfor -%}
+</ul></div>
+{%- endfor -%}
+</nav>
+{%- for cat in site.data.settings -%}
+<h2 class="hm-set-cat">{{ cat.category }}</h2>
+{%- for pg in cat.pages -%}
+<section class="hm-set-page" id="{{ pg.id }}">
+<h3>{{ pg.name }}</h3>
+<p class="hm-set-route">{% include path.html page=pg.id %}</p>
+<p class="hm-set-summary">{{ pg.summary }}</p>
+{%- for sec in pg.sections -%}
+<div class="hm-set-section">
+{%- if sec.name != pg.name -%}<p class="hm-set-section-name">{{ sec.name }}</p>{%- endif -%}
+<dl class="hm-set-list">
+{%- for it in sec.items -%}
+<div class="hm-set-item" id="{{ it.id }}">
+<dt>{{ it.name }}{% if it.pro %}<span class="hm-pro">Pro</span>{% endif %}</dt>
+<dd>{{ it.desc }}
+{%- if it.options -%}
+<ul class="hm-set-options">
+{%- for o in it.options -%}<li><b>{{ o.name }}</b>{% if o.pro %}<span class="hm-pro">Pro</span>{% endif %}<span>{{ o.desc }}</span></li>{%- endfor -%}
+</ul>
+{%- endif -%}
+</dd>
+{%- if it.default -%}<dd class="hm-set-default">初期値<b>{{ it.default }}</b></dd>{%- endif -%}
+</div>
+{%- endfor -%}
+</dl>
+{%- if sec.note -%}<p class="hm-set-note">{{ sec.note }}</p>{%- endif -%}
+</div>
+{%- endfor -%}
+</section>
+{%- endfor -%}
+{%- endfor -%}

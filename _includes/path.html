@@ -1,0 +1,18 @@
+{%- comment -%}
+設定の道順「設定 › ページ › 項目」を表示する。名前は _data/settings.yml から引くので、
+アプリの設定名が変わってもデータを直すだけで本文中の表記がすべて更新される。
+  {% include path.html id="adblock.strong" %}   … 項目まで
+  {% include path.html page="adblock" %}        … ページまで
+{%- endcomment -%}
+{%- assign hm_pg = nil -%}{%- assign hm_it = nil -%}
+{%- for hm_cat in site.data.settings -%}{%- for hm_p in hm_cat.pages -%}
+{%- if include.page and hm_p.id == include.page -%}{%- assign hm_pg = hm_p -%}{%- endif -%}
+{%- if include.id -%}{%- for hm_s in hm_p.sections -%}{%- for hm_i in hm_s.items -%}
+{%- if hm_i.id == include.id -%}{%- assign hm_pg = hm_p -%}{%- assign hm_it = hm_i -%}{%- endif -%}
+{%- endfor -%}{%- endfor -%}{%- endif -%}
+{%- endfor -%}{%- endfor -%}
+{%- if hm_pg -%}
+<a class="hm-path" href="{{ '/settings/' | relative_url }}#{% if hm_it %}{{ hm_it.id }}{% else %}{{ hm_pg.id }}{% endif %}"><span>設定</span>{%- for hm_step in hm_pg.path -%}<span>{{ hm_step }}</span>{%- endfor -%}{%- if hm_it and hm_it.name != hm_pg.path.last -%}<span>{{ hm_it.name }}</span>{%- endif -%}</a>
+{%- else -%}
+<span class="hm-path hm-path-missing">設定項目が見つかりません ({{ include.id }}{{ include.page }})</span>
+{%- endif -%}

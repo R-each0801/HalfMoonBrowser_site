@@ -1,0 +1,21 @@
+{%- comment -%}
+ダイヤルの初期配置の図 (画像を使わず HTML で描く)。項目は _data/dial.yml の defaults から作る。
+{%- endcomment -%}
+{%- assign d = site.data.dial.defaults -%}
+<div class="hm-dialmap" role="figure" aria-label="ダイヤルの初期配置">
+<div class="hm-dialmap-phone">
+<ol class="hm-dialmap-col hm-dialmap-left">
+{%- for a in d.left -%}<li style="--i:{{ forloop.index0 }};--n:{{ forloop.length }}">{{ a }}</li>{%- endfor -%}
+</ol>
+<div class="hm-dialmap-screen" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<ol class="hm-dialmap-col hm-dialmap-right">
+{%- for a in d.right -%}<li style="--i:{{ forloop.index0 }};--n:{{ forloop.length }}">{{ a }}</li>{%- endfor -%}
+</ol>
+</div>
+<div class="hm-dialmap-sub">
+<p class="hm-dialmap-sub-head">サブメニュー</p>
+<ol>{%- for a in d.submenu -%}<li>{{ a }}</li>{%- endfor -%}</ol>
+<p class="hm-dialmap-sub-note">左ダイヤルの「サブメニュー」を選ぶと開く縦のリスト</p>
+</div>
+<p class="hm-dialmap-caption">左ダイヤル・右ダイヤルとも上から順に並んでいます</p>
+</div>

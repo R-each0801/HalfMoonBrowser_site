@@ -1,127 +1,85 @@
 ---
 layout: default
-title: ダイヤルとカスタマイズ
+title: ダイヤル操作
 prev:
   title: ホーム
   url: /
 next:
-  title: 広告ブロックと機能
+  title: 機能ガイド
   url: /features/
 ---
 
-# ダイヤルとカスタマイズ
+# ダイヤル操作
 
-HalfMoon の中心にあるのは、**画面の端から呼び出せるダイヤル** です。
-よく使う操作をここにまとめておけば、片手のままブラウジングが完結します。
+HalfMoon の操作の中心は、画面の左右の端から呼び出す **ダイヤル** です。戻る・検索・タブの切り替えなど、よく使う操作をここに並べておけば、端末を持ち替えずに片手で操作できます。
 
 ## 基本の使い方
 
-<div class="hm-card-grid">
-  <div class="hm-card hm-card-static">
-    <span class="hm-card-num">STEP 1</span>
-    <span class="hm-card-title">端に触れる</span>
-    <span class="hm-card-desc">
-      画面の左端または右端に指を置くと、半円状のダイヤルが展開します。
-    </span>
-  </div>
-  <div class="hm-card hm-card-static">
-    <span class="hm-card-num">STEP 2</span>
-    <span class="hm-card-title">上下にスライド</span>
-    <span class="hm-card-desc">
-      指を動かすと項目がハイライトされ、短い振動でお知らせします。
-    </span>
-  </div>
-  <div class="hm-card hm-card-static">
-    <span class="hm-card-num">STEP 3</span>
-    <span class="hm-card-title">指を離して実行</span>
-    <span class="hm-card-desc">
-      ハイライト中の項目が実行されます。ダイヤル外で離すとキャンセル。
-    </span>
-  </div>
-</div>
+<ol class="hm-steps">
+  <li>
+    <p class="hm-step-title">端から内側へスワイプ</p>
+    <p>画面の左端または右端から、内側へ指を滑らせます。半円のダイヤルが開きます。端より少し内側から始めると反応しないので、画面のふちから始めてください。</p>
+  </li>
+  <li>
+    <p class="hm-step-title">指を上下に動かして選ぶ</p>
+    <p>指の位置にある項目が強調され、軽い振動で知らせます。</p>
+  </li>
+  <li>
+    <p class="hm-step-title">指を離して実行</p>
+    <p>強調された項目が実行されます。何も選ばずにダイヤルの外で離すと取り消しになります。</p>
+  </li>
+</ol>
 
-![右ダイヤルを展開した状態]({{ '/assets/images/dial-right.png' | relative_url }})
+<div class="hm-note" markdown="1">
+指を離してから項目をタップする操作に変えることもできます。「操作モード」で **タップで選択** を選んでください。
+{% include path.html id="dialEdit.mode" %}
+</div>
 
 ## 初期配置
 
-インストールしてすぐ使えるよう、よく使う項目が最初から並んでいます。
+インストール直後は次のように並んでいます。
 
-| 左ダイヤル (上から) | 右ダイヤル (上から) |
-|---|---|
-| ⬆ ページ最上部 | 🔍 検索・URL |
-| ➕ 新規タブ | ← 戻る |
-| ⋯ サブメニュー | 🏠 ホーム |
-| 🔖 ブックマーク追加 | → 進む |
-| ⬇ ページ最下部 | × タブを閉じる |
+{% include dial-map.html %}
 
-左ダイヤル中央の **「サブメニュー」** を選ぶと、縦リストが開いて
-以下の項目にアクセスできます。
+## 自分の手に合わせて並べ替える
 
-- 🗂 タブ一覧
-- ⬆ 共有
-- 🔍 ページ内検索
-- 👆 広告を消す
-- 📜 自動スクロール
-- ⚙ 設定
+使わない項目は外し、よく使う操作を足していきましょう。
 
-![サブメニュー展開中]({{ '/assets/images/dial-submenu.png' | relative_url }})
+<ol class="hm-steps">
+  <li>
+    <p class="hm-step-title">編集画面を開く</p>
+    <p>{% include path.html id="dial.edit" %}</p>
+  </li>
+  <li>
+    <p class="hm-step-title">項目を追加する</p>
+    <p>左ダイヤル・右ダイヤル・サブメニューのそれぞれにある「項目を追加」から、並べたい操作を選びます。</p>
+  </li>
+  <li>
+    <p class="hm-step-title">並べ替える・外す</p>
+    <p>行を長押ししたまま上下に動かすと並べ替えられます。行を左にスワイプすると外せます。</p>
+  </li>
+</ol>
 
-## 操作モードを選べる
-
-<div class="hm-card-grid">
-  <div class="hm-card hm-card-static">
-    <span class="hm-card-num">MODE A</span>
-    <span class="hm-card-title">ホールド＆リリース</span>
-    <span class="hm-card-desc">
-      指を画面に置いたまま上下にスライドし、目的の項目で離して確定。
-      テンポよく使える初期モード。
-    </span>
-  </div>
-  <div class="hm-card hm-card-static">
-    <span class="hm-card-num">MODE B</span>
-    <span class="hm-card-title">タップ切替</span>
-    <span class="hm-card-desc">
-      端をタップすると開いたまま固定され、項目をタップで実行。
-      じっくり確認しながら選びたい方向け。
-    </span>
-  </div>
-</div>
-
-設定 → ダイヤル → **操作モード** からいつでも切替できます。
-
-## 自分のダイヤルに作り込む
-
-標準配置のまま使い続ける必要はありません。**設定 → ダイヤル編集** から、
-項目の追加・削除・並び替えが自由にできます。
-
-![ダイヤル編集画面]({{ '/assets/images/dial-edit.png' | relative_url }})
-
-### 配置できるアクション
-
-よく使うものだけピックアップして並べてください。
-
-- **ナビゲーション** — 戻る / 進む / 更新 / ホーム
-- **タブ** — 新規タブ / タブを閉じる / タブ移動 / タブ一覧
-- **入力・検索** — 検索・URL / ページ内検索 / 履歴 / ブックマーク追加
-- **ページ操作** — ページ最上部 / 最下部 / 自動スクロール / 拡大 / 縮小 / PC 表示切替
-- **広告ブロック** — 広告を消す / サイト別広告ブロック切替
-- **表示** — スーパーダーク切替 / リーダー / 翻訳
-- **プライバシー** — プライベート切替
-- **その他** — サブメニュー / 共有 / 設定
-
-### 最大項目数
-
-|  | 通常版 | Pro 版 |
+| 並べられる数 | 通常 | Pro 版 |
 |---|:---:|:---:|
 | 左ダイヤル | 6 項目 | 12 項目 |
 | 右ダイヤル | 6 項目 | 12 項目 |
 | サブメニュー | 6 項目 | 12 項目 |
 
-### 操作の補助設定
+編集画面ではほかに次の調整ができます。
 
-| 設定 | 内容 |
-|---|---|
-| サイズ | ダイヤルの大きさを 0.8x 〜 1.8x で調整 |
-| 触覚フィードバック | 振動の強さを 弱 / 中 / 強 から選択、完全 OFF も可能 |
-| 左右入れ替え | 利き手に合わせて左右のダイヤルをワンタップで入れ替え |
-| デフォルトに戻す | カスタマイズをリセットして初期配置へ |
+- **サイズ** — ダイヤルの大きさを 0.8x〜1.8x で変えられます
+- **左右のダイヤルを入れ替える** — 左利きの方や持ち手を変えたいときに
+- **デフォルトに戻す** — 初期配置に戻します
+
+振動の有無と強さは {% include path.html id="dial.haptics" %} で変えられます。
+
+## 並べられる操作
+
+「項目を追加」で選べる操作の一覧です。
+
+{% include dial-actions.html %}
+
+<div class="hm-note" markdown="1">
+iPad では、ダイヤルに気付きやすいよう画面の左下に「戻る」と「メニュー」のボタンも表示されます。
+</div>

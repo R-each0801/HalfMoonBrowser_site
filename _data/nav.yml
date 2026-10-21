@@ -3,11 +3,17 @@
   items:
     - { label: ホーム, url: / }
     - { label: ダイヤル操作, url: /dial/ }
-    - { label: 機能一覧, url: /features/ }
+    - { label: 機能ガイド, url: /features/ }
+    - { label: 設定ガイド, url: /settings/ }
 
 - heading: サポート
   items:
-    - { label: お問い合わせ / FAQ, url: /support/ }
+    - { label: 困ったとき・お問い合わせ, url: /support/ }
+
+- heading: HalfMoon Browser
+  items:
+    - { label: 公式サイト, url: "https://r-each0801.github.io/web/apps/halfmoon-browser.html" }
+    - { label: App Store, url: "https://apps.apple.com/jp/app/halfmoon-browser/id6762731695" }
 
 - heading: 規約
   items:

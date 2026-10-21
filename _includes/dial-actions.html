@@ -1,0 +1,13 @@
+{%- comment -%}
+ダイヤルに並べられる操作の一覧。内容は _data/dial.yml の groups から作る。
+{%- endcomment -%}
+<div class="hm-action-groups">
+{%- for g in site.data.dial.groups -%}
+<div class="hm-action-group">
+<p class="hm-action-group-name">{{ g.name }}</p>
+<dl>
+{%- for a in g.actions -%}<div><dt>{{ a.name }}</dt><dd>{{ a.desc }}</dd></div>{%- endfor -%}
+</dl>
+</div>
+{%- endfor -%}
+</div>

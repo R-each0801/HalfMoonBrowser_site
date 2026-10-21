@@ -6,8 +6,12 @@
     {% for item in group.items %}
     {% assign link = item.url | remove_first: '/' | replace: '.html', '' %}
     <li>
+      {% if item.url contains '://' %}
+      <a class="hm-sidebar-link" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.label }} ↗</a>
+      {% else %}
       <a class="hm-sidebar-link{% if link == curr or item.url == page.url %} active{% endif %}"
          href="{{ item.url | relative_url }}">{{ item.label }}</a>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>

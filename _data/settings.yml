@@ -1,0 +1,347 @@
+# ================================================================
+# アプリの設定画面の内容 (マニュアル全体の「正」)
+# ================================================================
+# アプリの設定 (HalfMoonBrowser/Settings/SettingsPages.swift ほか) を変えたら、
+# このファイルだけ直せば次の 2 か所が自動で更新される:
+#   1. 設定ガイド (/settings/) の一覧
+#   2. 本文中の「設定 › ○○ › ○○」の道順表示 ({% include path.html id="..." %})
+#
+# 書き方
+#   - category: トップ画面の見出し (ブラウジング / 画面 …)
+#   - pages:    トップ画面から開くページ
+#       id:     道順表示で使う名前 (英数字)。変更すると本文の参照が切れるので注意
+#       name:   ページ名 (アプリの表示どおり)
+#       path:   「設定」から先にたどる名前の並び。トップ画面に直接並ぶ項目は [] にする
+#       summary: ページの説明 (アプリのトップに出る説明と同じ)
+#   - sections: ページ内の見出しごとのまとまり
+#       note:   見出しの下の補足 (アプリのフッターと同じ)
+#   - items:    設定項目
+#       id:     道順表示で使う名前。ページの id + "." + 項目名 にそろえる
+#       name / desc: アプリの表示どおり
+#       default: 初期値 (省略可)
+#       pro:    true なら Pro 版の機能
+#       options: 1 つを選ぶ設定の選択肢 (name / desc)
+# ================================================================
+
+- category: ブラウジング
+  pages:
+    - id: adblock
+      name: 広告ブロック
+      path: [広告ブロック]
+      summary: ブロックの強さ・サイト別・消した広告
+      sections:
+        - name: ブロックの強さ
+          note: 通常は「広告ブロック」だけで十分です。強力ブロックは一部のサイトで表示が崩れることがあります。
+          items:
+            - id: adblock.enabled
+              name: 広告ブロック
+              desc: URL と CSS のフィルタで広告を消します
+              default: オン
+            - id: adblock.strong
+              name: 強力ブロック
+              desc: 広告ブロックの検知や追従する広告にも対応します
+              default: オン
+        - name: サイトごとの調整
+          note: サイトごとのオン・オフと「広告を消す」はダイヤルからも操作できます。
+          items:
+            - id: adblock.sites
+              name: サイト別の広告ブロック
+              desc: ブロックをオフにしたサイトの確認と解除
+            - id: adblock.filters
+              name: カスタムフィルタ
+              desc: ブロックする URL のパターンを自分で追加
+            - id: adblock.hidden
+              name: 消した広告
+              desc: 「広告を消す」で隠した要素を元に戻す
+
+    - id: dial
+      name: ダイヤルと操作
+      path: [ダイヤルと操作]
+      summary: ダイヤルの編集・振動・スクロール
+      sections:
+        - name: ダイヤル
+          note: ダイヤルは画面の左右の端からスワイプすると表示されます。
+          items:
+            - id: dial.edit
+              name: ダイヤルを編集
+              desc: 左右のダイヤルの項目・サイズ・操作のしかた
+            - id: dial.haptics
+              name: 触覚フィードバック
+              desc: 項目を選んだときと実行したときに振動します
+              default: オン
+            - id: dial.hapticStrength
+              name: 振動の強さ
+              desc: 弱 / 中 / 強 から選びます (触覚フィードバックがオンのとき)
+              default: 中
+        - name: スクロール
+          note: 自動スクロールは画面をタップすると止まります。
+          items:
+            - id: dial.pullToRefresh
+              name: 下に引いて更新
+              desc: ページの一番上で下に引くと再読み込みします
+              default: オフ
+            - id: dial.autoScrollSpeed
+              name: 自動スクロールの速さ
+              desc: ダイヤルの「自動スクロール」で使う速さ (0.5x〜8.0x)
+              default: 2.0x
+
+    - id: dialEdit
+      name: ダイヤルを編集
+      path: [ダイヤルと操作, ダイヤルを編集]
+      summary: 左右のダイヤルとサブメニューに並べる項目を編集します
+      sections:
+        - name: 表示と操作
+          items:
+            - id: dialEdit.size
+              name: サイズ
+              desc: ダイヤルの大きさ (0.8x〜1.8x)
+              default: 1.0x
+            - id: dialEdit.mode
+              name: 操作モード
+              desc: ダイヤルで項目を選ぶ方法
+              default: ホールド離し
+              options:
+                - name: ホールド離し
+                  desc: スワイプで開き 指を動かした先の項目で離すと実行
+                - name: タップで選択
+                  desc: スワイプで開き 指を離した後に項目をタップで実行
+        - name: 項目
+          note: 各ダイヤルとサブメニューに並べられるのは 6 項目まで (Pro 版は 12 項目まで) です。行を長押しして並べ替え、左にスワイプして削除します。
+          items:
+            - id: dialEdit.left
+              name: 左ダイヤル
+              desc: 「項目を追加」から好きな操作を追加
+            - id: dialEdit.right
+              name: 右ダイヤル
+              desc: 「項目を追加」から好きな操作を追加
+            - id: dialEdit.submenu
+              name: サブメニュー
+              desc: ダイヤルの「サブメニュー」を選ぶと開く縦のリスト
+        - name: その他
+          items:
+            - id: dialEdit.swap
+              name: 左右のダイヤルを入れ替える
+              desc: 利き手に合わせて左右の並びを入れ替え
+            - id: dialEdit.reset
+              name: デフォルトに戻す
+              desc: 項目を初期の並びに戻す
+
+    - id: search
+      name: 検索とスタートページ
+      path: [検索とスタートページ]
+      summary: 検索エンジン・入力候補・ブックマークの読み込み
+      sections:
+        - name: 検索
+          note: プライベートブラウザで入力した語句は記録されません。
+          items:
+            - id: search.engine
+              name: 検索エンジン
+              desc: 検索バーに入力した語句を調べるサイト (Google / DuckDuckGo / Bing / Yahoo! Japan / Ecosia)
+              default: Google
+            - id: search.history
+              name: 検索履歴を候補に表示
+              desc: 最近の検索と URL を入力候補に出します
+              default: オン
+        - name: スタートページ
+          items:
+            - id: search.startSearchBar
+              name: 検索バーを表示
+              desc: スタートページの上部に検索バーを置きます
+              default: オン
+            - id: search.startTabs
+              name: タブ一覧を表示
+              desc: スタートページに開いているタブを並べます
+              default: オン
+        - name: お気に入り
+          note: 読み込んだブックマークはお気に入りの一番上の階層に追加されます。
+          items:
+            - id: search.import
+              name: ブックマークを読み込む
+              desc: 他のブラウザから書き出した HTML ファイルを取り込みます
+
+- category: 画面
+  pages:
+    - id: display
+      name: 表示モード
+      path: [表示モード]
+      summary: ライト・ダーク・スーパーダーク
+      sections:
+        - name: ページの配色
+          items:
+            - id: display.mode
+              name: ページの配色
+              desc: Web ページを表示するときの配色
+              default: ライト
+              options:
+                - name: ライト
+                  desc: ページをいつも明るい配色で表示
+                - name: ダーク
+                  desc: 明るいページも暗い配色に変換 写真と動画は元の色のまま
+                - name: 自動
+                  desc: 条件に合わせてライトとダークを切り替え
+                  pro: true
+        - name: 自動で切り替える条件
+          note: 「自動」を選んだときだけ表示されます。
+          items:
+            - id: display.autoTrigger
+              name: 自動で切り替える条件
+              desc: 「自動」のときにダークにする条件
+              default: 端末の設定に従う
+              pro: true
+              options:
+                - name: 端末の設定に従う
+                  desc: iOS のライトとダークに合わせる
+                - name: 時間帯
+                  desc: 指定した時刻のあいだだけダーク (初期値 19:00〜07:00)
+                - name: 画面の明るさ
+                  desc: 画面がしきい値より暗いときダーク (初期値 40%)
+        - name: スーパーダーク
+          note: ダイヤルの「スーパーダーク」からも切り替えられます。
+          items:
+            - id: display.superDark
+              name: スーパーダーク
+              desc: 画面全体を暗幕で覆い 夜のまぶしさを抑えます
+              default: オフ
+            - id: display.superDarkLevel
+              name: 暗さ
+              desc: 暗幕の濃さ (10%〜85%)
+              default: 50%
+
+    - id: tabs
+      name: タブとツールバー
+      path: [タブとツールバー]
+      summary: タブ一覧の形・新しいタブ・画面下部のバー
+      sections:
+        - name: タブ一覧の表示方法
+          note: ダイヤルの「タブ一覧」を開いたときの表示です。
+          items:
+            - id: tabs.style
+              name: タブ一覧の表示方法
+              desc: タブ一覧の並べ方
+              default: 円環カルーセル
+              options:
+                - name: 円環カルーセル
+                  desc: タブを円状に並べてスワイプで回します
+                - name: 横並び
+                  desc: 横一列に並べ 操作を画面下部にまとめます 大きい端末の片手操作向け
+        - name: 「新しいタブで開く」を選んだとき
+          note: リンクやお気に入りを長押しして「新しいタブで開く」を選んだときの動作です。
+          items:
+            - id: tabs.newTab
+              name: 「新しいタブで開く」を選んだとき
+              desc: 新しく開いたタブへ切り替えるかどうか
+              default: 今のタブのまま
+              options:
+                - name: 今のタブのまま
+                  desc: 新しいタブは裏で開きます
+                - name: 開いたタブに切り替える
+                  desc: 開いたタブをすぐに表示します
+        - name: 画面下部
+          note: 両方オンにすると 上にタブの帯 下に操作バーが並びます。
+          items:
+            - id: tabs.strip
+              name: タブの帯を表示
+              desc: 現在と前後のタブを並べて表示 左右スワイプで切り替え
+              default: オフ
+            - id: tabs.actionBar
+              name: 操作バーを表示
+              desc: 戻る・検索・ホーム・共有・進むを常に表示
+              default: オフ
+
+    - id: media
+      name: 動画と SNS
+      path: [動画と SNS]
+      summary: 専用プレイヤー・全画面の回転・SNS のリンク
+      sections:
+        - name: 埋め込み動画
+          note: 専用プレイヤーの切り替えは次にページを読み込んだときから反映されます。オフにすると iOS 標準のプレイヤーに戻ります。
+          items:
+            - id: media.player
+              name: 専用プレイヤーで再生
+              desc: ページ内の動画を片手で操作しやすいプレイヤーで再生
+              default: オン
+            - id: media.landscape
+              name: 全画面で横向きに回転
+              desc: 横長の動画を全画面にしたとき自動で横向きにします
+              default: オン
+        - name: SNS
+          note: 「埋め込み画像はアプリ内で拡大」は「公式アプリで開く」がオンのときに使えます。投稿の本文をタップしたときは公式アプリで開きます。
+          items:
+            - id: media.snsApp
+              name: 公式アプリで開く
+              desc: X・Instagram・TikTok のリンクを公式アプリで開きます
+              default: オン
+            - id: media.snsImage
+              name: 埋め込み画像はアプリ内で拡大
+              desc: ブログなどに埋め込まれた投稿の画像を その場で拡大します
+              default: オン
+
+- category: プライバシー
+  pages:
+    - id: private
+      name: プライベートブラウザ
+      path: [プライベートブラウザ]
+      summary: ロック・再開・専用のお気に入り
+      sections:
+        - name: プライベートブラウザ
+          note: プライベートブラウザでは閲覧履歴とログイン情報がこの端末に残りません。ロックがオンのときは 再開時やアプリに戻ったときにも本人確認します。
+          items:
+            - id: private.lock
+              name: ロック
+              desc: 開くときに Face ID・Touch ID・パスコードで確認します
+              default: オン
+            - id: private.resume
+              name: 次回起動時に再開
+              desc: アプリを開き直してもプライベートを続けます
+              default: オフ
+            - id: private.bookmarks
+              name: 専用のお気に入り
+              desc: プライベートで追加したお気に入りを通常と分けて保管
+              default: オフ
+              pro: true
+
+    - id: data
+      name: 履歴とデータ
+      path: [履歴とデータ]
+      summary: 履歴・ダウンロード・サイトデータ
+      sections:
+        - name: 履歴
+          note: プライベートブラウザでの閲覧は記録されません。
+          items:
+            - id: data.history
+              name: 履歴を表示
+              desc: 見たページの一覧と個別の削除
+            - id: data.clearHistory
+              name: 履歴をすべて削除
+              desc: 閲覧履歴をまとめて削除します
+        - name: ファイルとサイトデータ
+          note: パスワードは iOS の自動入力 (iCloud キーチェーン) に保存されます。
+          items:
+            - id: data.downloads
+              name: ダウンロード
+              desc: 保存した PDF や ZIP の確認と削除
+            - id: data.siteData
+              name: サイトデータ
+              desc: Cookie やキャッシュをサイトごとに削除
+
+- category: アプリ
+  pages:
+    - id: app
+      name: アプリ
+      path: []
+      summary: 設定のトップ画面の一番下に並ぶ項目
+      sections:
+        - name: アプリ
+          items:
+            - id: app.pro
+              name: Pro にアップグレード
+              desc: 自動の表示モード・専用のお気に入り・ダイヤル 12 項目
+            - id: app.restore
+              name: 購入を復元
+              desc: 以前に購入した Pro 版を取り戻します
+            - id: app.defaultBrowser
+              name: デフォルトのブラウザ
+              desc: iOS の設定で HalfMoon を選ぶと 他のアプリのリンクをここで開けます
+            - id: app.version
+              name: バージョン
+              desc: アプリのバージョン番号

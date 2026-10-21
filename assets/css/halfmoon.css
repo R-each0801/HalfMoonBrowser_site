@@ -655,3 +655,296 @@ body.hm-body-cover {
   color: var(--hm-text-tertiary);
   line-height: 1.5;
 }
+
+/* =====================================================================
+ * 「余白 (Editorial White)」 2026-10
+ * App Store 画像・公式サイトと同じデザインに合わせる層。上の基本スタイルを
+ * トークンと文字組みで上書きする (構造・クラス名はそのまま)。
+ *  - 紙の白 #F3F2EF / インク #1E2230 / 月光インディゴ #2B3A67
+ *  - 見出しは明朝 (Shippori Mincho B1)、ラベルは欧文セリフ (Cormorant Garamond)、本文はゴシック (Zen Kaku Gothic New)
+ *  - 角丸は小さく、影はほぼ使わず罫線で区切る
+ * ===================================================================== */
+:root {
+  --hm-accent:          #2B3A67;
+  --hm-accent-soft:     #E7E8EE;
+  --hm-accent-hover:    #1F2B50;
+  --hm-accent-on:       #FFFFFF;
+  --hm-bg:              #F3F2EF;
+  --hm-surface:         #FAF9F7;
+  --hm-surface-alt:     #ECEAE5;
+  --hm-text:            #1E2230;
+  --hm-text-secondary:  #5C6170;
+  --hm-text-tertiary:   #8A8E99;
+  --hm-separator:       rgba(30, 34, 48, 0.12);
+  --hm-radius-lg:       6px;
+  --hm-radius:          6px;
+  --hm-radius-sm:       4px;
+  --hm-shadow-sm:       none;
+  --hm-shadow:          0 10px 30px rgba(30, 34, 48, 0.06);
+  --hm-shadow-lg:       0 16px 40px rgba(30, 34, 48, 0.08);
+  --hm-font-mincho:     "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --hm-font-latin:      "Cormorant Garamond", Georgia, serif;
+  --hm-font-body:       "Zen Kaku Gothic New", -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hm-accent:          #E8D9A6;
+    --hm-accent-soft:     #23252C;
+    --hm-accent-hover:    #F2E5B8;
+    --hm-accent-on:       #14161B;
+    --hm-bg:              #14161B;
+    --hm-surface:         #1A1C22;
+    --hm-surface-alt:     #20232A;
+    --hm-text:            #ECE9E1;
+    --hm-text-secondary:  #A9ABB3;
+    --hm-text-tertiary:   #7C7F88;
+    --hm-separator:       rgba(236, 233, 225, 0.10);
+    --hm-shadow:          none;
+    --hm-shadow-lg:       none;
+  }
+}
+
+body { font-family: var(--hm-font-body); letter-spacing: 0.02em; }
+.hm-header { background: color-mix(in srgb, var(--hm-bg) 88%, transparent); }
+.hm-brand-title { font-family: var(--hm-font-latin); font-size: 21px; font-weight: 600; letter-spacing: 0.04em; }
+.hm-brand-subtitle { font-family: var(--hm-font-latin); letter-spacing: 0.22em; text-transform: uppercase; font-size: 11px; }
+.hm-header-link {
+  font-size: 13px; color: var(--hm-text-secondary); text-decoration: none;
+  border: 1px solid var(--hm-separator); border-radius: 999px; padding: 6px 14px; white-space: nowrap;
+}
+.hm-header-link:hover { color: var(--hm-accent); border-color: var(--hm-accent); }
+.hm-nav-toggle { background: transparent; color: var(--hm-text); border: 1px solid var(--hm-separator); box-shadow: none; }
+
+/* サイドバー: 欧文セリフの小見出し + 細い罫線 */
+.hm-sidebar { background: transparent; }
+.hm-sidebar-heading { font-family: var(--hm-font-latin); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--hm-text-tertiary); }
+.hm-sidebar-link { border-radius: 0; border-left: 1px solid transparent; }
+.hm-sidebar-link.active { background: transparent; color: var(--hm-accent); border-left-color: var(--hm-accent); font-weight: 700; }
+
+/* 本文: 明朝の見出しと、ゆったりした行間 */
+.hm-content { line-height: 1.95; }
+.hm-content h1, .hm-content h2, .hm-content h3 {
+  font-family: var(--hm-font-mincho); font-weight: 600; letter-spacing: 0.04em; color: var(--hm-text);
+}
+.hm-content h1 { font-size: 34px; line-height: 1.5; border-bottom: 0; padding-bottom: 0; }
+.hm-content h1::after { content: ""; display: block; width: 44px; height: 1px; background: var(--hm-text); margin-top: 22px; }
+.hm-content h2 { font-size: 25px; line-height: 1.55; border-bottom: 0; border-top: 1px solid var(--hm-separator); padding-top: 34px; margin-top: 56px; }
+.hm-content h3 { font-size: 19px; }
+.hm-content p, .hm-content li { color: var(--hm-text-secondary); }
+.hm-content strong { color: var(--hm-text); }
+.hm-content a { color: var(--hm-accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+.hm-content blockquote { background: var(--hm-surface); border-left: 1px solid var(--hm-accent); border-radius: 0; }
+.hm-content table { border-radius: 0; box-shadow: none; }
+.hm-content th { font-family: var(--hm-font-body); background: transparent; color: var(--hm-text-tertiary); font-weight: 500; }
+.hm-content img { border-radius: 10px; box-shadow: var(--hm-shadow); }
+
+/* トップの見出し: 中央寄せのグラデーションをやめ、左揃えの明朝で静かに */
+.hm-hero { text-align: left; background: none; padding: 40px 0 44px; margin: 0 0 40px; border-bottom: 1px solid var(--hm-separator); border-radius: 0; }
+.hm-hero::after { display: none; }
+.hm-hero-glyph { width: 44px; height: 44px; margin: 0 0 26px; }
+.hm-hero h1 { font-family: var(--hm-font-mincho); font-weight: 600; font-size: 40px; line-height: 1.45; letter-spacing: 0.04em; }
+.hm-hero h1::after { display: none; }
+.hm-hero h1 em { font-style: normal; color: var(--hm-accent); }
+.hm-hero-label { font-family: var(--hm-font-latin); letter-spacing: 0.22em; text-transform: uppercase; font-size: 14px; color: var(--hm-text-tertiary); margin: 0 0 14px; }
+.hm-hero-lead { margin: 18px 0 0; max-width: 34em; line-height: 1.95; }
+.hm-hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.hm-hero-links a {
+  display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px;
+  font-size: 14px; font-weight: 700; text-decoration: none; border: 1px solid var(--hm-separator); color: var(--hm-text);
+}
+.hm-hero-links a.primary { background: var(--hm-accent); color: var(--hm-accent-on); border-color: var(--hm-accent); }
+
+/* カード: 角丸を抑え、番号は欧文セリフ */
+.hm-card { border-radius: var(--hm-radius); box-shadow: none; background: var(--hm-surface); }
+.hm-card:hover { box-shadow: var(--hm-shadow); transform: none; }
+.hm-card-num { font-family: var(--hm-font-latin); font-size: 15px; letter-spacing: 0.2em; color: var(--hm-text-tertiary); background: none; padding: 0; }
+.hm-card-title { font-family: var(--hm-font-mincho); font-weight: 600; letter-spacing: 0.03em; }
+
+.hm-pagination-link { border-radius: var(--hm-radius); box-shadow: none; background: var(--hm-surface); }
+.hm-pagination-label { font-family: var(--hm-font-latin); letter-spacing: 0.18em; text-transform: uppercase; }
+.hm-pagination-title { font-family: var(--hm-font-mincho); }
+.hm-footer { border-top: 1px solid var(--hm-separator); background: transparent; }
+
+@media (max-width: 640px) {
+  .hm-hero { padding: 28px 0 32px; margin: 0 0 28px; }
+  .hm-hero h1 { font-size: 30px; }
+  .hm-content h1 { font-size: 28px; }
+  .hm-content h2 { font-size: 22px; margin-top: 44px; }
+  .hm-header-link { display: none; }
+}
+
+/* 【レイアウト崩れの修正】サイドバー背後の暗幕 (.hm-sidebar-backdrop) は .hm-layout の
+   グリッドの子なので、PC 幅では 2 列目のセルを占有し、本文 (.hm-main) が次の行の 1 列目
+   (幅 280px) に押し出されていた (公開中のサイトでも本文がサイドバーの下に表示されていた)。
+   暗幕はスマホ幅でサイドバーを開いたときだけ使うので、PC 幅では表示しない。 */
+.hm-sidebar-backdrop { display: none; }
+@media (max-width: 960px) {
+  .hm-sidebar-backdrop { display: block; }
+  .hm-sidebar { background: var(--hm-bg) !important; }
+}
+/* 特徴カード 3 枚を 1 行に (2 + 1 で 1 枚だけ取り残されないように) / 見出し直後の二重線をなくす */
+.hm-card-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.hm-hero + h2, .hm-hero + hr + h2 { border-top: 0; padding-top: 0; margin-top: 8px; }
+.hm-hero + hr { display: none; }
+/* 本文中のスクリーンショットは端末の大きさ程度に (本文幅いっぱいに広げない) */
+.hm-content > p > img, .hm-content > img { display: block; max-width: min(100%, 360px); margin: 28px auto; }
+@media (max-width: 640px) {
+  .hm-card-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* =====================================================================
+ * マニュアル部品 (2026-10 スクリーンショットなしの構成)
+ * 画面の画像を使わず、道順・手順・注記・一覧で説明する。
+ * 文言は _data/settings.yml と _data/dial.yml から作るので、ここは見た目だけ。
+ * ===================================================================== */
+
+/* 設定の道順「設定 › ページ › 項目」 */
+.hm-content a.hm-path, .hm-path {
+  display: inline-flex; flex-wrap: wrap; align-items: center;
+  margin: 2px 2px; padding: 1px 12px; border: 1px solid var(--hm-separator); border-radius: 999px;
+  background: var(--hm-surface); color: var(--hm-text); font-size: 0.86em; line-height: 1.8;
+  text-decoration: none; vertical-align: baseline;
+}
+.hm-content a.hm-path:hover { border-color: var(--hm-accent); color: var(--hm-accent); }
+.hm-path span + span::before { content: "›"; margin: 0 .45em; color: var(--hm-text-tertiary); font-weight: 400; }
+.hm-path span:first-child { color: var(--hm-text-tertiary); }
+.hm-path span:last-child { font-weight: 700; }
+.hm-path-missing { border-color: var(--hm-destructive); color: var(--hm-destructive); }
+
+/* アプリ内のボタン名・ダイヤル項目名 */
+.hm-ui {
+  display: inline-block; padding: 0 .5em; margin: 0 .1em; border-radius: 4px;
+  background: var(--hm-accent-soft); color: var(--hm-text); font-size: .92em; font-weight: 700; line-height: 1.7;
+}
+
+/* 番号付きの手順 */
+.hm-content ol.hm-steps { list-style: none; counter-reset: hm-step; padding: 0; margin: 26px 0 30px; }
+.hm-content ol.hm-steps > li {
+  counter-increment: hm-step; position: relative; padding: 0 0 22px 58px; margin: 0;
+}
+.hm-content ol.hm-steps > li::before {
+  content: counter(hm-step, decimal-leading-zero); position: absolute; left: 0; top: -2px;
+  font-family: var(--hm-font-latin); font-size: 26px; line-height: 1; color: var(--hm-accent); letter-spacing: .04em;
+}
+.hm-content ol.hm-steps > li::after {
+  content: ""; position: absolute; left: 15px; top: 34px; bottom: 6px; width: 1px; background: var(--hm-separator);
+}
+.hm-content ol.hm-steps > li:last-child { padding-bottom: 0; }
+.hm-content ol.hm-steps > li:last-child::after { display: none; }
+.hm-content ol.hm-steps p { margin: 0; }
+.hm-content ol.hm-steps p + p { margin-top: 4px; }
+.hm-content .hm-step-title { font-family: var(--hm-font-mincho); font-weight: 600; font-size: 17.5px; color: var(--hm-text); letter-spacing: .03em; }
+
+/* 注記・例 */
+.hm-note, .hm-example {
+  margin: 24px 0; padding: 16px 20px; border-left: 2px solid var(--hm-accent);
+  background: var(--hm-surface); border-radius: 0 6px 6px 0;
+}
+.hm-content .hm-note p, .hm-content .hm-example p { margin: 0; }
+.hm-content .hm-note p + p, .hm-content .hm-example p + p { margin-top: 8px; }
+.hm-note::before {
+  content: "NOTE"; display: block; font-family: var(--hm-font-latin); font-size: 12px; letter-spacing: .22em;
+  color: var(--hm-text-tertiary); margin-bottom: 4px;
+}
+
+/* 目次 */
+.hm-toc {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px 28px;
+  margin: 28px 0 10px; padding: 22px 24px; background: var(--hm-surface); border: 1px solid var(--hm-separator); border-radius: 6px;
+}
+.hm-content .hm-toc ul { list-style: none; margin: 0; padding: 0; }
+.hm-content .hm-toc li { margin: 0; padding: 0; line-height: 2; }
+.hm-content .hm-toc a { border-bottom: 0; color: var(--hm-text); }
+.hm-content .hm-toc a:hover { color: var(--hm-accent); }
+.hm-content .hm-toc-head {
+  margin: 0 0 4px; font-family: var(--hm-font-mincho); font-weight: 600; color: var(--hm-text-tertiary); font-size: 13px;
+}
+.hm-toc-inline { display: block; }
+.hm-content .hm-toc-inline ul { columns: 2 150px; column-gap: 28px; }
+
+/* 設定ガイド */
+.hm-content h2.hm-set-cat { margin-top: 64px; }
+.hm-set-page { margin: 34px 0 0; scroll-margin-top: 80px; }
+.hm-content .hm-set-page h3 { margin: 0 0 6px; font-size: 21px; }
+.hm-content .hm-set-route { margin: 0 0 6px; }
+.hm-content .hm-set-summary { margin: 0 0 14px; font-size: 14px; color: var(--hm-text-tertiary); }
+.hm-set-section { margin: 0 0 18px; background: var(--hm-surface); border: 1px solid var(--hm-separator); border-radius: 6px; overflow: hidden; }
+.hm-content .hm-set-section-name {
+  margin: 0; padding: 10px 18px; font-size: 12.5px; font-weight: 700; letter-spacing: .06em;
+  color: var(--hm-text-tertiary); border-bottom: 1px solid var(--hm-separator); background: var(--hm-surface-alt);
+}
+.hm-set-list { margin: 0; }
+.hm-set-item {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px;
+  padding: 14px 18px; border-top: 1px solid var(--hm-separator); scroll-margin-top: 80px;
+}
+.hm-set-item:first-child { border-top: 0; }
+.hm-set-item:target { background: var(--hm-accent-soft); }
+.hm-set-item dt { grid-column: 1; font-weight: 700; color: var(--hm-text); line-height: 1.6; }
+.hm-set-item dd { grid-column: 1; margin: 0; color: var(--hm-text-secondary); font-size: 14px; line-height: 1.75; }
+.hm-set-item dd.hm-set-default {
+  grid-column: 2; grid-row: 1; align-self: start; font-size: 12px; color: var(--hm-text-tertiary); white-space: nowrap;
+}
+.hm-set-default b { margin-left: .5em; color: var(--hm-text); font-weight: 700; }
+.hm-content .hm-set-options { list-style: none; margin: 8px 0 2px; padding: 0; }
+.hm-content .hm-set-options li { margin: 0; padding: 6px 0 6px 14px; border-left: 1px solid var(--hm-separator); }
+.hm-set-options b { color: var(--hm-text); margin-right: .6em; }
+.hm-set-options span:last-child { display: block; font-size: 13px; }
+.hm-content .hm-set-note { margin: 0; padding: 10px 18px 12px; font-size: 13px; color: var(--hm-text-tertiary); border-top: 1px solid var(--hm-separator); }
+.hm-pro {
+  display: inline-block; margin-left: .5em; padding: 0 .55em; border-radius: 999px; vertical-align: 1px;
+  background: var(--hm-accent-soft); color: var(--hm-accent); font-size: 11px; font-weight: 700; line-height: 1.7;
+}
+@media (max-width: 560px) {
+  .hm-set-item { grid-template-columns: minmax(0, 1fr); }
+  .hm-set-item dd.hm-set-default { grid-column: 1; grid-row: auto; margin-top: 4px; }
+}
+
+/* ダイヤルの初期配置の図 (画像なし) */
+.hm-dialmap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px 40px; margin: 30px 0 34px; }
+.hm-dialmap-phone {
+  position: relative; width: min(100%, 340px); height: 380px; border: 1px solid var(--hm-separator);
+  border-radius: 38px; background: var(--hm-surface); box-shadow: var(--hm-shadow);
+}
+.hm-dialmap-phone::before {
+  content: ""; position: absolute; top: 12px; left: 50%; width: 76px; height: 18px; margin-left: -38px;
+  border-radius: 999px; background: var(--hm-surface-alt);
+}
+.hm-dialmap-screen { position: absolute; inset: 64px 72px 60px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.hm-dialmap-screen i { display: block; height: 6px; border-radius: 3px; background: var(--hm-surface-alt); }
+.hm-dialmap-screen i:nth-child(3n) { width: 70%; }
+.hm-dialmap-screen i:nth-child(3n+2) { width: 88%; }
+.hm-content .hm-dialmap-col {
+  position: absolute; top: 50%; transform: translateY(-50%); list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 9px;
+}
+.hm-dialmap-left { left: 10px; align-items: flex-start; }
+.hm-dialmap-right { right: 10px; align-items: flex-end; }
+.hm-content .hm-dialmap-col li {
+  --t: calc((var(--i) + 0.5) / var(--n) - 0.5);
+  margin: 0; padding: 4px 11px; border-radius: 999px; white-space: nowrap; line-height: 1.5;
+  font-size: 12px; font-weight: 700; color: var(--hm-accent-on); background: var(--hm-accent);
+}
+.hm-content .hm-dialmap-left li { transform: translateX(calc((0.25 - var(--t) * var(--t)) * 120px)); }
+.hm-content .hm-dialmap-right li { transform: translateX(calc((0.25 - var(--t) * var(--t)) * -120px)); }
+.hm-dialmap-sub { min-width: 200px; }
+.hm-content .hm-dialmap-sub-head { margin: 0 0 8px; font-family: var(--hm-font-mincho); font-weight: 600; color: var(--hm-text); }
+.hm-content .hm-dialmap-sub ol { list-style: none; margin: 0; padding: 0; border: 1px solid var(--hm-separator); border-radius: 10px; background: var(--hm-surface); overflow: hidden; }
+.hm-content .hm-dialmap-sub li { margin: 0; padding: 9px 16px; border-top: 1px solid var(--hm-separator); font-size: 14px; color: var(--hm-text); }
+.hm-content .hm-dialmap-sub li:first-child { border-top: 0; }
+.hm-content .hm-dialmap-sub-note { margin: 8px 0 0; font-size: 12.5px; color: var(--hm-text-tertiary); max-width: 220px; line-height: 1.6; }
+.hm-content .hm-dialmap-caption { flex-basis: 100%; margin: 0; text-align: center; font-size: 13px; color: var(--hm-text-tertiary); }
+@media (max-width: 380px) {
+  .hm-content .hm-dialmap-col li { font-size: 11px; padding: 3px 9px; }
+  .hm-content .hm-dialmap-left li { transform: translateX(calc((0.25 - var(--t) * var(--t)) * 90px)); }
+  .hm-content .hm-dialmap-right li { transform: translateX(calc((0.25 - var(--t) * var(--t)) * -90px)); }
+}
+
+/* ダイヤルに並べられる操作 */
+.hm-action-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 22px 0 28px; }
+.hm-action-group { background: var(--hm-surface); border: 1px solid var(--hm-separator); border-radius: 6px; padding: 14px 18px 8px; }
+.hm-content .hm-action-group-name { margin: 0 0 6px; font-family: var(--hm-font-mincho); font-weight: 600; color: var(--hm-text); }
+.hm-action-group dl { margin: 0; }
+.hm-action-group dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid var(--hm-separator); }
+.hm-action-group dt { font-weight: 700; font-size: 14px; color: var(--hm-text); white-space: nowrap; }
+.hm-action-group dd { margin: 0; font-size: 13px; color: var(--hm-text-tertiary); text-align: right; }
